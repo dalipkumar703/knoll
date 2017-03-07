@@ -1,131 +1,21 @@
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Knoll Healthcare</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Knoll Healthcare" />
-	<meta name="keywords" content="knoll, healthcare" />
-	<meta name="author" content="knollhealthcare.com" />
-
- 
-
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="images/favicon.png">
-
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	
-
-	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="css/simple-line-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Style -->
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	<style>
-	p{
-		font-size:1em;
-		
-	}
+@extends('template.default')
 
-	li{
-		font-size:0.95em;
-	}
-	@media only screen and (max-width: 610px) {
-
-		div.carousel-caption>p{
-			display:none;
-			
-		}
-
-
-
-	}
-
-	</style>
-
-	</head>
-	<body>
-	<header role="banner" id="fh5co-header">
-		<div class="fluid-container">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header">
-					<!-- Mobile Toggle Menu Button -->
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="index.html"><span>Knoll</span> Healthcare</a> 
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" data-nav-section="home" style=""><span>Home</span></a></li>
-						<li><a href="#" data-nav-section="explore"><span>About Us</span></a></li>
-						
-						
-						<li><a href="#" data-nav-section="vision"><span>Vision</span></a></li>
-						<li><a href="#" data-nav-section="services"><span>Products</span></a></li>
-						<li><a href="#" data-nav-section="clients"><span>Clients</span></a></li>
-						<li><a href="#" data-nav-section="faq"><span>Enquiry</span></a></li>
-						<li><a href="#" data-nav-section="trusted"><span>Quality</span></a></li>
-						<!--<li class="call-to-action"><a href="#"><span>Sign up free</span></a></li>-->
-						<li><a href="#" data-nav-section="news"><span>News</span></a></li>
-						<li><a href="#" data-nav-section="network"><span>Network</span></a></li>
-						
-					</ul>
-				</div>
-			</nav>
-	  </div>
-	</header>
-
-	<!--style="background-image: url(images/bg2.jpg);" data-stellar-background-ratio="0.5"-->
-	<section id="fh5co-home" data-section="home" style="height: auto;">
-		<!--<div class="gradient"></div>-->
+@section('content')
+<section id="fh5co-home" data-section="home" style="height: auto;">
+		<!-- carousel hide
 		
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <!--
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  	-->
+    
   </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="images/bg.jpeg" alt="Knoll Healthcare">
       <div class="carousel-caption">
@@ -137,17 +27,10 @@
     <div class="item">
       <img src="images/bg2.jpg" alt="Knoll Healthcare">
     </div>
-    <!--
-    <div class="item">
-      <img src="img_flower.jpg" alt="Flower">
-    </div>
-
-    <div class="item">
-      <img src="img_flower2.jpg" alt="Flower">
-    </div>-->
+   
   </div>
 
-  <!-- Left and right controls -->
+ 
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -156,7 +39,7 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div>-->
 	<!--	
 	    <div class="container">
 			<div class="text-wrap">
@@ -605,79 +488,4 @@
 		</div>
 	</div>
 -->
-	<div id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">About Us</h3>
-					<p>A dynamic and optimistic player in the healthcare industry.</p>
-					<p class="copy-right">&copy; 2016 Knoll Healthcare. <br>All Rights Reserved. <br>
-						Designed by <a href="http://genithub.com" target="_blank">genithub.com</a>
-						
-					</p>
-				</div>
-
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Our Address</h3>
-					<ul class="contact-info">
-						<li><i class="icon-map-marker"></i>A-201, 2nd Floor, North Ex Mall</br>
-						Sec-9, Rohini Delhi-110 085</li>
-						<li><i class="icon-phone"></i> +91-9958879977<br />+91-11-27557541-42-43-44 </li>
-						<li><i class="icon-envelope"></i><a href="#">sales@knollhealthcare.com</a></li>
-						<li><i class="icon-globe2"></i><a href="#">www.knollhealthcare.com</a></li>
-					</ul>
-					<h3 class="section-title">Connect with Us</h3>
-					<ul class="social-media">
-						<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href="#" class="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-md-4 to-animate">
-					<h3 class="section-title">Drop us a line</h3>
-					<form class="contact-form">
-						<div class="form-group">
-							<label for="name" class="sr-only">Name</label>
-							<input type="name" class="form-control" id="name" placeholder="Name">
-						</div>
-						<div class="form-group">
-							<label for="email" class="sr-only">Email</label>
-							<input type="email" class="form-control" id="email" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<label for="message" class="sr-only">Message</label>
-							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="Send Message">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--
-	<div id="map" class="fh5co-map"></div>
-	-->
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Owl Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
-	<!-- Main JS (Do not remove) -->
-	<script src="js/main.js"></script>
-
-	</body>
-</html>
-
+@stop
