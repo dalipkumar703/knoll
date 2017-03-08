@@ -20,10 +20,25 @@ class SearchController extends Controller
     public function autocomplete(Request $request)
 
     {
-         alert("hello autocomplete");
+         
         $data = Generic::where("name","LIKE","%{$request->input('query')}%")->get();
 
         return response()->json($data);
 
     }
+    public function index()
+    {
+        $query = e(Input::get('q',''));
+
+    // If the input is empty, return an error response
+    if(!$query && $query == '') return Response::json(array(), 400);
+     $names = Generic::where('name','like','%'.$query.'%')
+    ->orderBy('name','asc')
+    ->take(2)
+    ->get()->toArray();
+    }
+
+    return Response::json(array(
+        'data'=>$names
+    ));
 }

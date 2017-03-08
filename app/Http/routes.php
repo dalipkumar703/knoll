@@ -20,3 +20,4 @@ Route::get('/generic',function() {
 Route::get('search',array('as'=>'search','uses'=>'SearchController@search'));
 
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
+Route::get('api/search', 'ApiSearchController@index');
