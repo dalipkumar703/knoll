@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use DB;
 
-class Generic extends Model
+class Generic5 extends Model
 
 {
 

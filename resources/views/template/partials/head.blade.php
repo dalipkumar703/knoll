@@ -32,9 +32,7 @@
 
   <script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
   <script type="text/javascript" src='{{ url("vendor/selectize/js/standalone/selectize.min.js") }}'></script>
-  <script type="text/javascript">
-    var root = '{{url("/")}}';
-</script>
+ 
 
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	
@@ -59,6 +57,9 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>

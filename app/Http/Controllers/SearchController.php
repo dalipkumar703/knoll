@@ -10,35 +10,16 @@ use App\Generic;
 
 class SearchController extends Controller
 {
-        public function search()
-         {
-        return view('generic');
-    }
 
-
-
-    public function autocomplete(Request $request)
-
-    {
-         
-        $data = Generic::where("name","LIKE","%{$request->input('query')}%")->get();
-
-        return response()->json($data);
-
-    }
     public function index()
     {
-        $query = e(Input::get('q',''));
-
-    // If the input is empty, return an error response
-    if(!$query && $query == '') return Response::json(array(), 400);
+        $query = Input::get('keywords');
      $names = Generic::where('name','like','%'.$query.'%')
     ->orderBy('name','asc')
     ->take(2)
-    ->get()->toArray();
+    ->get();
+    return View::make('searchGeneric')->with('result',$names);
     }
 
-    return Response::json(array(
-        'data'=>$names
-    ));
+    
 }

@@ -11,7 +11,14 @@
 <br>
 <br> 
  <p>Looking for an android app. We design you app from scratch to end with your requirements and satify you untill app is develop properly according to your demand.</p>
-     <select id="searchbox" name="q" placeholder="Search products or categories..." class="form-control"></select>
+     <div class="col-lg-4 col-lg-offset-4">
+     	<div class="form-group">
+           <input id="searchbox" name="q" placeholder="Generic Search" class="form-control" onkeydown="down()" onkeyup="up()">
+        
+     	</div>
+        <div class="col-lg-12" id="search-results"></div>
+     </div>
+     
 
 
 
@@ -19,47 +26,34 @@
 <div class="col-md-6">
 </div>
 </div>
-<script type="text/javascript">
-
-	  $(document).ready(function(){
-	    $('#searchbox').selectize({
-        valueField: 'url',
-        labelField: 'name',
-        searchField: ['name'],
-        maxOptions: 10,
-        options: [],
-        create: false,
-        render: {
-            option: function(item, escape) {
-                return '<div>' +escape(item.name)+'</div>';
-            }
-        },
-        load: function(query, callback) {
-            if (!query.length) return callback();
-            $.ajax({
-                url: root+'/api/search',
-                type: 'GET',
-                dataType: 'json',
-                data: {
-                    q: query
-                },
-                error: function() {
-                    callback();
-                },
-                success: function(res) {
-                    callback(res.data);
-                }
-            });
-        },
-        onChange: function(){
-            window.location = this.items[0];
-        }
-    });
-	});
-
+<script type="text/javascript"> 
+var timer;
+function up()
+{
+	
+	timer=setTimeout(function() {
+     var keywords=$("#searchbox").val();
+     console.log(keywords);
+     if(keywords.length>0)
+     {
+     	console.log("inside if");
+     	$.post("api/search",{keywords:keywords},function() {
+     		//('#search-results').html(markup);
+     		console.log("working");
+     	});
+     	console.log("end if");
+     }
+	},500);
+}
+function down()
+{
+    console.log("Down");
+	clearTimeout(timer);
+}
 </script>
 
 
 
+
  
-  @stop
+@stop
