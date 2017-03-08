@@ -37,11 +37,12 @@ function up()
      if(keywords.length>0)
      {
      	console.log("inside if");
-     	$.post("api/search",{keywords:keywords},function() {
+     	$.post("http:/localhost:8000/api/search",{keywords:keywords},function(data,status) {
      		//('#search-results').html(markup);
-     		console.log("working");
-     	});
-     	console.log("end if");
+     		console.log("data"+data+"status"+status);
+     	
+     });
+        console.log("end if");
      }
 	},500);
 }

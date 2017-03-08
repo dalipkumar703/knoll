@@ -20,6 +20,6 @@ class SearchController extends Controller
     ->get();
     return View::make('searchGeneric')->with('result',$names);
     }
-
+    
     
 }
