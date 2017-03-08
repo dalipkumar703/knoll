@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "723c93fe096310e1fdfac26e974c3ee8",
+    "content-hash": "88031ffe69468db032cfeb7eba022d9e",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1906,6 +1906,55 @@
                 "dump"
             ],
             "time": "2017-02-20T12:48:07+00:00"
+        },
+        {
+            "name": "teamtnt/tntsearch",
+            "version": "v0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/teamtnt/tntsearch.git",
+                "reference": "d6b563d051ce2300c227e7e8c0d57b9a475546d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/teamtnt/tntsearch/zipball/d6b563d051ce2300c227e7e8c0d57b9a475546d1",
+                "reference": "d6b563d051ce2300c227e7e8c0d57b9a475546d1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.5|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TeamTNT\\TNTSearch\\": "src"
+                },
+                "files": [
+                    "helper/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nenad Tičarić",
+                    "email": "nticaric@gmail.com",
+                    "homepage": "http://www.tntstudio.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fully featured full text search engine written in PHP",
+            "homepage": "https://github.com/teamtnt/tntsearch",
+            "keywords": [
+                "teamtnt",
+                "tntsearch"
+            ],
+            "time": "2016-05-27T22:36:30+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
