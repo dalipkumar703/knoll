@@ -28,10 +28,10 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="images/favicon.png">
 
-  <link href="{{ url('vendor/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet">
+  <link href="{{ url('vendor/dist/css/selectize.bootstrap3.css') }}" rel="stylesheet">
 
-  <script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
-  <script type="text/javascript" src='{{ url("vendor/selectize/js/standalone/selectize.min.js") }}'></script>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+  <script type="text/javascript" src='{{ url("vendor/dist/js/standalone/selectize.min.js") }}'></script>
   <script type="text/javascript">
     var root = '{{url("/")}}';
 </script>
