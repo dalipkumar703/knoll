@@ -17,7 +17,7 @@ Route::get('/', function () {
 Route::get('/generic',function() {
    return view('generic');
 });
-Route::get('search',array('as'=>'search','uses'=>'SearchController@search'));
-
-Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
-Route::get('api/search', 'ApiSearchController@index');
+Route::group(array('prefix'=>'api'), function()
+{
+	Route::resource('search', 'SearchController', array('only' => 'show'));
+});

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Generic;
+use DB;
 
 class SearchController extends Controller
 {
@@ -26,19 +28,13 @@ class SearchController extends Controller
         return response()->json($data);
 
     }
-    public function index()
-    {
-        $query = e(Input::get('q',''));
+   public function show($term)
+{
+    $generics = DB::table('generic')
+        ->where('name', 'LIKE', '%' . $term . '%')
+        ->get();
 
-    // If the input is empty, return an error response
-    if(!$query && $query == '') return Response::json(array(), 400);
-     $names = Generic::where('name','like','%'.$query.'%')
-    ->orderBy('name','asc')
-    ->take(2)
-    ->get()->toArray();
-    }
+    return response()->json($generics);
+}
 
-    return Response::json(array(
-        'data'=>$names
-    ));
 }
