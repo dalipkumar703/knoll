@@ -431,12 +431,12 @@
 	<section id="fh5co-trusted" data-section="trusted">
 		<div class="fh5co-trusted">
 			<div class="container">
-				<div class="row">
+				<div class="row" >
 					<div class="col-md-12 section-heading text-center">
 						<h2 class="to-animate" style="font-family: 'Voltaire', sans-serif;">Trusted By</h2>
 						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext">
-								<h3 class="to-animate">We’re trusted by these popular companies</h3>
+							<div class="col-md-8 col-md-offset-2 subtext" ng-controller="home">
+								<h3 class="to-animate">We’re trusted by <%name %> like popular companies</h3>
 							</div>
 						</div>
 					</div>
@@ -488,4 +488,7 @@
 		</div>
 	</div>
 -->
+ <script src="app/controllers/home.js"></script>
+
+
 @stop

@@ -55,6 +55,9 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+       <script src="app/app.js"></script>
+ 
 
 
 	<!-- Modernizr JS -->
