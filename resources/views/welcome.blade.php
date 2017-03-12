@@ -1,63 +1,24 @@
-
-
-
 @extends('template.default')
 
 @section('content')
-<section id="fh5co-home" data-section="home" style="height: auto;">
-		<!-- carousel hide
+
+<section data-section="home">
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div class="container">
+	<div class="row">
 		
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="col-md-6 text-center">
 
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    
-  </ol>
-
-    <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/bg.jpeg" alt="Knoll Healthcare">
-      <div class="carousel-caption">
-        <h3 style="font-size:2.6em;">Knoll Healthcare</h3>
-        <p>A dynamic and optimistic player in the healthcare industry, having vision to create a truly international healthcare company that would address complete healthcare needs.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="images/bg2.jpg" alt="Knoll Healthcare">
-    </div>
-   
-  </div>
-
- 
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>-->
-	<!--	
-	    <div class="container">
-			<div class="text-wrap">
-				<div class="text-inner">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							<h1 class="to-animate" style="font-size:2.6em;">Knoll Healthcare</h1>
-							<h2 class="to-animate" style="font-family: 'Voltaire', sans-serif;">A dynamic and optimistic player in the healthcare industry, having vision to create a truly international healthcare company that would address complete healthcare needs.</a></h2>
-							<div class="call-to-action">
-								<a href="#fh5co-pricing" class="demo to-animate"  style="font-family: 'Voltaire', sans-serif;">Our Vision</a>
-								<a href="#fh5co-services" class="download to-animate" style="font-family: 'Voltaire', sans-serif;">Gallery</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-	</section>
+		<a type="button" class="btn btn-primary" href="{{url('generic')}}">Search by Generic Name</a>
+		</div>
+		<div class="col-md-6 text-center">
+		<a type="button" class="btn btn-default">Search by Brand Name</a>
+		</div>
+	</div>	
+</div>
+		
+</section>
 
 	<section id="fh5co-explore" data-section="explore">
 		<div class="container">
@@ -435,8 +396,8 @@
 					<div class="col-md-12 section-heading text-center">
 						<h2 class="to-animate" style="font-family: 'Voltaire', sans-serif;">Trusted By</h2>
 						<div class="row">
-							<div class="col-md-8 col-md-offset-2 subtext" ng-controller="home">
-								<h3 class="to-animate">We’re trusted by <%name %> like popular companies</h3>
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="to-animate">We’re trusted by popular companies like</h3>
 							</div>
 						</div>
 					</div>
@@ -488,7 +449,7 @@
 		</div>
 	</div>
 -->
- <script src="app/controllers/home.js"></script>
+ 
 
 
 @stop

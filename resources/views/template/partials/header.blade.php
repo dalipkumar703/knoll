@@ -1,5 +1,5 @@
 <body>
-	<header role="banner" id="fh5co-header">
+	<header role="banner" id="fh5co-header" style="position: relative;">
 		<div class="fluid-container">
 			<nav class="navbar navbar-default">
 				<div class="navbar-header">
@@ -9,7 +9,8 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="#" data-nav-section="home" style=""><span>Home</span></a></li>
+						<li class="active">
+						<a href="#" data-nav-section="home" style=""><span>Home</span></a></li>
 						<li><a href="#" data-nav-section="explore"><span>About Us</span></a></li>
 						
 						

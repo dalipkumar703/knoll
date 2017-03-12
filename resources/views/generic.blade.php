@@ -22,6 +22,6 @@
         <!-- AngularJS Application Scripts -->
        
         <script src="app/controllers/genericsearch.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js"></script>
+
  
   @stop
