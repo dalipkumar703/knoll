@@ -21,3 +21,7 @@ Route::group(array('prefix'=>'api'), function()
 {
 	Route::resource('search', 'SearchController', array('only' => 'show'));
 });
+Route::get('/generic-detail/{id}',[
+	'uses'=>'SearchController@genericDetail',
+	'as'=>'genericDetail',
+	]);
