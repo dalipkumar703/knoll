@@ -1,11 +1,12 @@
  @extends('template.default')
+
  @section('content')
    <br><br><br><br>
  <div class="table-responsive">          
   <table class="table">
     <thead>
       <tr>
-        <th>S.no</th>
+        <th>S.No</th>
         <th>Name</th>
         <th>Type</th>
         <th>Unit</th>

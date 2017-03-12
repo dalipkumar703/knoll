@@ -17,11 +17,11 @@ Route::get('/', function () {
 Route::get('/generic',function() {
    return view('generic');
 });
+Route::get('/generic-detail/{id}',[
+	'uses'=>'SearchController@genericDetail',
+	'as'=>'genericDetail'
+	]);
 Route::group(array('prefix'=>'api'), function()
 {
 	Route::resource('search', 'SearchController', array('only' => 'show'));
 });
-Route::get('/generic-detail/{id}',[
-	'uses'=>'SearchController@genericDetail',
-	'as'=>'genericDetail',
-	]);
