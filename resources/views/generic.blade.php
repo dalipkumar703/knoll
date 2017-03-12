@@ -10,6 +10,11 @@
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
     </div>
+    
+    <div class="col-md-6" ng-if="asyncSelected">
+
+     <p ng-repeat="x in data"><% x.name %></p>
+    </div>
         </div>
     
 

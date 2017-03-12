@@ -5,6 +5,7 @@ app.controller('genericsearch', function($scope,$http) {
     	console.log(term);
         return $http.get('api/search/'+term).then(function(data) {
             console.log(data.data);
+            $scope.data=data.data;
             return data.data;
         });
     };
