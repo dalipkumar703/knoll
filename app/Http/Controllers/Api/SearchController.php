@@ -15,7 +15,6 @@ class ApiSearchController extends BaseController {
 		if(!$query && $query == '') return Response::json(array(), 400);
 		$generics = Generic::where('published', true)
 			->where('name','like','%'.$query.'%')
-			->take(2)
 			->get()->toArray();
 		// Data normalization
 		

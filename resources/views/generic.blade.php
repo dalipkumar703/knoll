@@ -5,7 +5,7 @@
 
         <div class="row" ng-controller="genericsearch">
            <br><br><br><br><br>
-           <input type="text" ng-model="asyncSelected" placeholder="Search for generic" uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults" class="form-control" typehead-min-length="2">
+           <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="2">
     <i ng-show="loadingGeneric" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
