@@ -15,6 +15,11 @@ class Generic extends Migration
         Schema::create('generic', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('type');
+            $table->string('unit');
+            $table->string('constituent');
+            $table->string('package');
+            $table->string('price');
             $table->rememberToken();
             $table->timestamps();
         });

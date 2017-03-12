@@ -31,10 +31,18 @@ class SearchController extends Controller
    public function show($term)
 {
     $generics = DB::table('generic')
-        ->where('name', 'LIKE', '%' . $term . '%')
+        ->where('constituent', 'LIKE',  $term . '%')
         ->get();
 
     return response()->json($generics);
 }
+ public function genericDetail($id)
+ {
+   $generic=DB::table('generic')
+             ->where('id',$id)
+             ->first();
+
+    return view('genericdetail')->with('generic',$generic);
+ }
 
 }
