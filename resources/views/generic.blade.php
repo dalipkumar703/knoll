@@ -29,6 +29,7 @@
     <div ng-show="noResults">
       <div><i class="glyphicon glyphicon-remove"></i> No Results Found</div>
     </div>
+
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
@@ -71,6 +72,7 @@
     </div>
     </div>
     
+
     </div>
         </div>
     

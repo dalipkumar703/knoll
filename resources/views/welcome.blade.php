@@ -13,7 +13,7 @@
 		<a type="button" class="btn btn-primary" href="{{url('generic')}}">Search by Generic Name</a>
 		</div>
 		<div class="col-md-6 text-center">
-		<a type="button" class="btn btn-default">Search by Brand Name</a>
+		<a type="button" class="btn btn-default" href="{{url('brand')}}">Search by Brand Name</a>
 		</div>
 	</div>	
 </div>

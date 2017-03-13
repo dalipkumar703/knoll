@@ -46,5 +46,12 @@ class SearchController extends Controller
 
     return view('genericdetail')->with('generic',$generic);
  }
+ public function showBrand($term)
+ {
+    $brands=DB::table('brand')
+            ->where('brand','LIKE',$term.'%')
+            ->get();
+            return response()->json($brands);
+ }
 
 }
