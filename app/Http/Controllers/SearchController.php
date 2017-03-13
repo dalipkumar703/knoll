@@ -32,6 +32,7 @@ class SearchController extends Controller
 {
     $generics = DB::table('generic')
         ->where('constituent', 'LIKE',  $term . '%')
+        ->take(10)
         ->get();
 
     return response()->json($generics);
@@ -43,6 +44,13 @@ class SearchController extends Controller
              ->first();
 
     return view('genericdetail')->with('generic',$generic);
+ }
+ public function showBrand($term)
+ {
+    $brands=DB::table('brand')
+            ->where('brand','LIKE',$term.'%')
+            ->get();
+            return response()->json($brands);
  }
 
 }

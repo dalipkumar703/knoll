@@ -12,8 +12,9 @@
     </div>
     
     <div class="col-md-6" ng-if="asyncSelected">
+                                                                                      
 
-     <a href="generic-detail/<% x.id %>" ng-repeat="x in data"><% x.constituent %></a><br>
+     <a href="generic-detail/" ng-repeat="x in data"><br></a>
     </div>
         </div>
     

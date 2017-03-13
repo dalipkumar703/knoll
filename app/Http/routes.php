@@ -24,4 +24,17 @@ Route::get('/generic-detail/{id}',[
 Route::group(array('prefix'=>'api'), function()
 {
 	Route::resource('search', 'SearchController', array('only' => 'show'));
+    Route::resource('brand', 'BrandController', array('only' => 'show'));
+			
+
 });
+Route::get('/brand',function() {
+   return view('brand');
+});
+
+/*
+Route::get('searchbrand/{term}',[
+	'uses'=>'SearchController@showBrand',
+	'as'=>'searchbrand'
+	]);
+	*/
