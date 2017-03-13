@@ -13,7 +13,7 @@
 
 <div class="row" ng-controller="brandsearch">
 <form ng-submit="brandSubmit()">
-<div class="col-md-offset-1 col-md-3">
+<div class="col-md-offset-1 col-md-3" style="padding-right:0px;">
 <div class="form-group">
     <label for="brand">Brand</label>
 	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name..." autocomplete="off" autofocus="">
@@ -23,7 +23,7 @@
 </div>
 </div>
 </div>
-<div class="col-md-2">
+<div class="col-md-2" style="padding-right:0px;">
  
 <div class="form-group">
   <label for="sel1">Type:</label>
@@ -112,7 +112,7 @@
                         						</div>
 
 </div>
-<div class="col-md-4">
+<div class="col-md-4" style="padding-right:0px;">
 <div class="form-group">
 <label for="category">Category</label>
 <select id="category" class="form-control" ng-model="category">
