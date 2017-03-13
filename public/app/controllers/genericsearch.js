@@ -12,5 +12,18 @@ app.controller('genericsearch', function($scope,$http) {
 
         });
     };
+
+    $scope.enterPressedOnSearch = function(term){
+        console.log('Inside function' , term);
+        document.getElementById('searchGeneric').onkeydown = function(event) {
+    if (event.keyCode == 13) {
+        console.log('Inside if', term);
+        $http.get('api/search/' + term).then(function(response) {
+            console.log('Inside $http.get' , response.data);
+            $scope.data=response.data;
+        });
+        }
+    }
+    };
 });
 
