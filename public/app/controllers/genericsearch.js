@@ -12,7 +12,7 @@ app.controller('genericsearch', function($scope,$http) {
 
         });
     };
-
+ 
     $scope.enterPressedOnSearch = function(term){
         console.log('Inside function' , term);
         document.getElementById('searchGeneric').onkeydown = function(event) {

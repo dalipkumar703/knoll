@@ -3,11 +3,11 @@
 @section('content')
 <br>
 <div class="row" ng-controller="brandsearch">
-<form ng-submit="brandSubmit">
+<form ng-submit="brandSubmit()">
 <div class="col-md-4">
 <div class="form-group">
     <label for="brand">Brand</label>
-	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="2" placeholder="search brand">
+	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name...">
 <i ng-show="loadingBrand" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -15,7 +15,7 @@
 </div>
 </div>
 <div class="col-md-2">
-
+ 
 <div class="form-group">
   <label for="sel1">Type:</label>
 <select class="form-control" id="sel1" ng-model="type">
@@ -146,14 +146,75 @@
 </div>
 
 </div>
+
 <div class="col-md-2">
 <div class="form-group">
 <br>
-<input type="submit" value="Click" class="btn btn-default" ng-click="brandSubmit()">
+<input type="submit" value="Click" class="btn btn-default">
 </div>
 </div>
 </form>
+<div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+<div ng-if="!(brandData) && searchInitialised" class="text-center">
+    
+    <span>Your Search didn't match anything</span>
 </div>
+
+<div class="col-md-12 text-center">
+      
+
+      <div class="col-md-offset-1 col-md-9" ng-if="brandData">
+      <div class="table-responsive">          
+  <table class="table table-hover">
+  <thead>
+  <tr>
+    <td>
+    Brand
+    </td>
+    <td>
+    Category
+    </td>
+    <td>
+    Type
+    </td>
+    <td>
+    Package Unit
+    </td>
+    <td>
+    Price
+    </td>
+    <td>
+    Price/Unit
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+     <% brandData.brand %>
+    </td>
+    <td><% brandData.category %></td>
+    <td><% brandData.type %></td>
+    <td><% brandData.packageunit %></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brandData.price %></td>
+    
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brandData.priceunit %></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
   <script src="app/controllers/brandsearch.js"></script>
 
 @stop
