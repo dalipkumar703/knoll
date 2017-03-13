@@ -15,7 +15,16 @@
 						
 						
 						<li><a href="#" data-nav-section="vision"><span>Vision</span></a></li>
-						<li><a href="#" data-nav-section="services"><span>Products</span></a></li>
+						<li class="dropdown"><a href="#"><span>Products</span></a>
+						<div class="dropdown-content">
+    
+    <a href="{{url('generic')}}" target="_blank"><span>Generic Name</span></a>
+    
+    <a href="{{url('brand')}}" target="_blank"><span>Brand Name</span></a>
+  	
+  	
+  </div>
+  </li>
 						<li><a href="#" data-nav-section="clients"><span>Clients</span></a></li>
 						<li><a href="#" data-nav-section="faq"><span>Enquiry</span></a></li>
 						<li><a href="#" data-nav-section="trusted"><span>Quality</span></a></li>
