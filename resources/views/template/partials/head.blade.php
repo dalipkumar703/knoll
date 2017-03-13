@@ -58,6 +58,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.js"></script>
        
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		
 
        <script src="{{ URL::to('/') }}/app/app.js"></script>
  

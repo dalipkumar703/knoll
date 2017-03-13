@@ -17,7 +17,7 @@
 
             <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults"
             typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" style="display: inline-block; width: 50%;" id="searchGeneric" ng-keydown="enterPressedOnSearch(asyncSelected)"/>
-           
+           <button class="btn btn-primary" ng-click="clickedOnSearch(asyncSelected)" type="submit"><span class="glyphicon glyphicon-search"></span></button>
            </div>
            </div>
            <div style="display:block;">

@@ -21,9 +21,24 @@ app.controller('genericsearch', function($scope,$http) {
         $http.get('api/search/' + term).then(function(response) {
             console.log('Inside $http.get' , response.data);
             $scope.data=response.data;
+            
         });
         }
     }
+    };
+
+    $scope.clickedOnSearch = function(term){
+        console.log('Inside function clicked' , term);
+        
+    
+        console.log('Inside if', term);
+        $http.get('api/search/' + term).then(function(response) {
+            console.log('Inside $http.get' , response.data);
+            $scope.data=response.data;
+            
+        });
+        
+    
     };
 });
 
