@@ -1,13 +1,22 @@
 @extends('template.default')
 
 @section('content')
-<br>
+<section data-section="services">
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div class="text-center">
+  <h2>Search by Brand Name</h2>
+  
+  </div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 <div class="row" ng-controller="brandsearch">
 <form ng-submit="brandSubmit()">
-<div class="col-md-4">
+<div class="col-md-offset-1 col-md-3">
 <div class="form-group">
     <label for="brand">Brand</label>
-	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name...">
+	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name..." autocomplete="off" autofocus="">
 <i ng-show="loadingBrand" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -150,7 +159,9 @@
 <div class="col-md-2">
 <div class="form-group">
 <br>
-<input type="submit" value="Click" class="btn btn-default">
+<button type="submit" class="btn btn-primary">
+  <span class="glyphicon glyphicon-search"></span>
+</button>
 </div>
 </div>
 </form>
@@ -161,7 +172,7 @@
 
 <div ng-if="!(brandData) && searchInitialised" class="text-center">
     
-    <span>Your Search didn't match anything</span>
+    <span>Your search didn't match anything</span>
 </div>
 
 <div class="col-md-12 text-center">
@@ -214,7 +225,7 @@
 
 <div>&nbsp;</div>
 
-<div>&nbsp;</div>
-  <script src="app/controllers/brandsearch.js"></script>
 
+  <script src="app/controllers/brandsearch.js"></script>
+</section>
 @stop
