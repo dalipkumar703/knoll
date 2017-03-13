@@ -1,5 +1,5 @@
 app.controller('brandsearch', function($scope,$http) {
-    
+
     $scope.brand = function(term) {
     	console.log(term);
         return $http.get('api/brand/'+term).then(function(response) {
@@ -11,6 +11,21 @@ app.controller('brandsearch', function($scope,$http) {
             });
 
         });
+    };
+    $scope.brandSubmit = function() {
+       return $http.get('api/brand/'+$scope.type+'/'+$scope.asyncSelected+'/'+$scope.category)
+       .then(function(response) {
+            console.log("apac",response);    
+
+ 
+        });
+
+    	
+
+
+
+
+
     };
 });
 

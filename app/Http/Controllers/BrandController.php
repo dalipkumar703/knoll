@@ -26,6 +26,17 @@ class brandController extends Controller
             return response()->json($brands);
        
     }
+    public function showBrandDetail($type,$brand,$category)
+    {
+        
+         $brand=DB::table('brand')
+            ->where('brand','=',$brand)
+            ->where('type','=',$type)
+            ->where('category','=',$category)
+            ->first();
+            return response()->json($brand);
+            
+    }
 
     /**
      * Show the form for editing the specified resource.
