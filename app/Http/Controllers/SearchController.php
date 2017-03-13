@@ -32,6 +32,7 @@ class SearchController extends Controller
 {
     $generics = DB::table('generic')
         ->where('constituent', 'LIKE',  $term . '%')
+        ->orWhere('constituent', '=' , '$term   ')
         ->take(10)
         ->get();
 

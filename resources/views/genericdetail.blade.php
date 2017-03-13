@@ -6,7 +6,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>S.No</th>
+        <th>S.No.</th>
         <th>Name</th>
         <th>Type</th>
         <th>Unit</th>
