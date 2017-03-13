@@ -1,7 +1,7 @@
  @extends('template.default')
  @section('content')
    
-
+<section data-section="services">
   <div class="container text-center">
   <div>&nbsp;</div>
 <div>&nbsp;</div>
@@ -85,5 +85,5 @@
        
         <script src="app/controllers/genericsearch.js"></script>
 
- 
+ </section>
   @stop
