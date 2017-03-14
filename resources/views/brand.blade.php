@@ -142,6 +142,6 @@
 
 
   <script src="app/controllers/brandsearch.js"></script>
-  <script src="{{URL::asset('js/custom.js')}}"></script>
+  
 </section>
 @stop
