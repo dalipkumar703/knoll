@@ -7,12 +7,16 @@
 <div>&nbsp;</div>
 <div class="container">
 	<div class="row">
-		
-		<div class="col-md-6 text-center">
+<div class="col-md-12 section-heading text-center" style="padding-bottom: 0px;">
+<h2 class="" style="font-family: 'Voltaire', sans-serif;">Search Products</h2>
+</div>		
+<br />
+<div>&nbsp;</div>
+		<div class="col-md-6 col-sm-12 text-center">
 
 		<a type="button" class="btn btn-primary" href="{{url('generic')}}">Search by Generic Name</a>
 		</div>
-		<div class="col-md-6 text-center">
+		<div class="col-md-6 col-sm-12 text-center">
 		<a type="button" class="btn btn-default" href="{{url('brand')}}">Search by Brand Name</a>
 		</div>
 	</div>	
@@ -388,7 +392,7 @@
 	</section>
 
 	<hr>
-
+<!--
 	<section id="fh5co-trusted" data-section="trusted">
 		<div class="fh5co-trusted">
 			<div class="container">
@@ -431,7 +435,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 <!--
 	<div class="getting-started getting-started-2">
 		<div class="container">

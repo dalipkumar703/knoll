@@ -5,7 +5,7 @@
 				<div class="col-md-4 to-animate">
 					<h3 class="section-title">About Us</h3>
 					<p>A dynamic and optimistic player in the healthcare industry.</p>
-					<p class="copy-right">&copy; 2016 Knoll Healthcare. <br>All Rights Reserved. <br>
+					<p class="copy-right">&copy; 2017 Knoll Healthcare. <br>All Rights Reserved. <br>
 						Designed by <a href="http://genithub.com" target="_blank">genithub.com</a>
 						
 					</p>
@@ -13,9 +13,13 @@
 
 				<div class="col-md-4 to-animate">
 					<h3 class="section-title">Our Address</h3>
+
+
+
+ 
 					<ul class="contact-info">
-						<li><i class="icon-map-marker"></i>A-201, 2nd Floor, North Ex Mall</br>
-						Sec-9, Rohini Delhi-110 085</li>
+						<li><i class="icon-map-marker"></i>M-17, Pharma Tower, Basement & Ground,</br>
+						Badli Industrial Area, New Delhi 110 042</li>
 						<li><i class="icon-phone"></i> +91-9958879977<br />+91-11-27557541-42-43-44 </li>
 						<li><i class="icon-envelope"></i><a href="#">sales@knollhealthcare.com</a></li>
 						<li><i class="icon-globe2"></i><a href="#">www.knollhealthcare.com</a></li>
