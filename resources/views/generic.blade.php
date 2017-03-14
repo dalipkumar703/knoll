@@ -3,26 +3,36 @@
    
 <section data-section="services">
   <div class="container text-center">
-  <div>&nbsp;</div>
-<div>&nbsp;</div>
+  
 
+  <div>&nbsp;</div>
   <div>
   <h2>Search by Generic Name</h2>
   
   </div>
-        <div class="row text-center" ng-controller="genericsearch">
-           <br><br>
-           <div class="col-md-12">
-           <div class="col-md-offset-2 col-md-8 text-center">
+  <div>&nbsp;</div>
 
-            <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults"
-            typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" style="display: inline-block; width: 50%;" id="searchGeneric" ng-keydown="enterPressedOnSearch(asyncSelected)" autocomplete="off" autofocus="" />
-           <button class="btn btn-primary" ng-click="clickedOnSearch(asyncSelected)" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-           </div>
-           </div>
-           <div style="display:block;">
+  <div>&nbsp;</div>
+
+        <div class="row" ng-controller="genericsearch">
+           <div class="col-md-12 text-center">
            
-           <div>
+           <form ng-submit="clickedOnSearch(asyncSelected)">
+           <div class="col-md-offset-3 col-md-5" style="padding-right: 0px;">
+           <div class="form-group">
+            <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults"
+            typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" id="searchGeneric"  autocomplete="off" autofocus="" style="width:100%" />
+            </div>
+            </div>
+           <div class="col-md-1">
+           <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+           </div>
+
+           </form>
+           
+
+           
+           
     
     <i ng-show="loadingGeneric" class="glyphicon glyphicon-refresh"></i>
     </div>
@@ -30,16 +40,16 @@
       <div><i class="glyphicon glyphicon-remove"></i> No Results Found</div>
     </div>
 
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
+    
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div class="col-md-12 text-center">
       
 
-      <div class="col-md-offset-1 col-md-9" ng-if="asyncSelected">
+      <div class="col-md-offset-1 col-md-9" ng-if="genericSearchSuccessfull">
       <div class="table-responsive">          
   <table class="table table-hover">
+  
   <thead>
   <tr>
     <td>
@@ -57,7 +67,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr ng-repeat="x in data">
+  <tr ng-repeat="x in genericData">
     <td> 
      <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
     </td>
