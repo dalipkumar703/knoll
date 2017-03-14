@@ -58,7 +58,7 @@
   </thead>
   <tbody>
   <tr ng-repeat="x in data">
-    <td>
+    <td> 
      <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
     </td>
     <td><% x.type %></td>

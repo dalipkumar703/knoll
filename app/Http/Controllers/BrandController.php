@@ -26,14 +26,13 @@ class brandController extends Controller
             return response()->json($brands);
        
     }
-    public function showBrandDetail($type,$brand,$category)
+    public function showBrandDetail($brand,$category)
     {
         
          $brand=DB::table('brand')
-            ->where('brand','=',$brand)
-            ->where('type','=',$type)
-            ->where('category','=',$category)
-            ->first();
+            ->where('brand',$brand)
+            ->orWhere('category',$category)
+            ->get();
             return response()->json($brand);
             
     }

@@ -1,5 +1,7 @@
 app.controller('brandsearch', function($scope,$http) {
        $scope.searchInitialised = 0;
+       $scope.brandData = [];
+       $scope.searchSuccessfull = 0;
     $scope.brand = function(term) {
     	console.log(term);
         return $http.get('api/brand/'+term).then(function(response) {
@@ -14,22 +16,31 @@ app.controller('brandsearch', function($scope,$http) {
     }; 
     $scope.brandSubmit = function() {
         $scope.searchInitialised = 1;
-       return $http.get('api/brand/'+$scope.type+'/'+$scope.asyncSelected+'/'+$scope.category)
+        $scope.brandData = [];
+       return $http.get('api/brand/'+$scope.asyncSelected+'/'+$scope.category)
        .then(function(response) {
             console.log("Brand Response: ",response);
             console.log("Brand Data: ", response.data);    
 
-                if(response.data.id){
+
+            return response.data.map(function(item){
+                if(item.id){
                     //Search matched
                     console.log("Search Matched");
-                    $scope.brandData = response.data;
-                    return response.data;
+                    $scope.brandData.push(item);
+                    console.log("brandData is here ",$scope.brandData);
+                    $scope.searchSuccessfull = 1;
+                    return 1;
                 }else{
                     //Search didn't match
                     console.log("Search didn't match");
-                    $scope.brandData = 0;
+                    
+                    $scope.searchSuccessfull = 0;
                     return 0;
                 }
+                
+            });
+                
         });
 
     	

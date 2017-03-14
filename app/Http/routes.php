@@ -25,7 +25,7 @@ Route::group(array('prefix'=>'api'), function()
 {
 	Route::resource('search', 'SearchController', array('only' => 'show'));
     Route::resource('brand', 'BrandController', array('only' => 'show'));
-    Route::get('brand/{type}/{brand}/{category}',[
+    Route::get('brand/{brand}/{category}',[
     	'uses'=>'BrandController@showBrandDetail',
     	'as'=>'brand.detail'
     	]);
