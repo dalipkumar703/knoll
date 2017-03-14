@@ -29,8 +29,19 @@ Route::group(array('prefix'=>'api'), function()
     	'uses'=>'BrandController@showBrandDetail',
     	'as'=>'brand.detail'
     	]);
+    Route::get('admin/{username}/{password}',[
+    	'uses'=>'AdminController@login',
+    	'as' =>'login',
+    	]);
 			
 
+});
+Route::group(array('prefix'=>'admin'),function() 
+{
+  Route::get('/',function() {
+   return view('admin.home');
+  });
+  Route::get('/index','AdminController@indexShow');
 });
 Route::get('/brand',function() {
    return view('brand');

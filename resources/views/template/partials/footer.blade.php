@@ -1,5 +1,6 @@
 
 <div id="fh5co-footer" role="contentinfo">
+		@if(!Request::is('admin')&& !Request::is('admin/index'))
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 to-animate">
@@ -53,6 +54,7 @@
 				</div>
 			</div>
 		</div>
+		@endif
 	</div>
 	<!--
 	<div id="map" class="fh5co-map"></div>
