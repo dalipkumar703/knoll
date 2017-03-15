@@ -38,10 +38,19 @@ Route::group(array('prefix'=>'api'), function()
 });
 Route::group(array('prefix'=>'admin'),function() 
 {
+	//admin login page
   Route::get('/',function() {
    return view('admin.home');
   });
+  //admin home page
   Route::get('/index','AdminController@indexShow');
+  //logout admin area
+  Route::get('/logout','AdminController@deleteSession');
+  //generic add
+   Route::post('generic/add',[
+    'uses'=>'AdminController@addGeneric',
+    'as'=>'addGeneric'
+   	]); 
 });
 Route::get('/brand',function() {
    return view('brand');

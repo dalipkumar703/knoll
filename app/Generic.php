@@ -9,6 +9,6 @@ class Generic extends Model
 
 {
 
-    public $fillable = ['id','name'];
+    public $fillable = ['id','name','brand','filepath','type','unit','constituent','package','price'];
 
 }
