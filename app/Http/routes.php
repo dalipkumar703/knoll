@@ -51,6 +51,16 @@ Route::group(array('prefix'=>'admin'),function()
     'uses'=>'AdminController@addGeneric',
     'as'=>'addGeneric'
    	]); 
+   //generic update
+   Route::get('generic/update/{id}',[
+   	'uses'=>'AdminController@updateGeneric',
+     'as'=>'showUpdate'
+   	]);
+   //update generic value
+      Route::post('generic/updatevalue',[
+   	'uses'=>'AdminController@updateGenericValue',
+   	'as'=>'updateGenericValue'
+   	]);
 });
 Route::get('/brand',function() {
    return view('brand');

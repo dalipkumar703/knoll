@@ -70,6 +70,63 @@ class AdminController extends Controller
     'price' => $request->input('price'),
     ]); 
     }
-    dd("uploaded succesfully");
+    Session::flash('added_generic', 'Generic added successfully!');
+    return redirect()->back();
    }
+   public function updateGeneric($id)
+   {
+     $generic=DB::table('generic')
+             ->where('id',$id)
+             ->first();
+      
+    return view('admin.updategeneric')->with('generic',$generic);
+  }
+  public function updateGenericValue(Request $request)
+  {
+    $this->validate($request,[
+    'name' => 'required',
+    'brand' => 'required',
+    'file' => 'mimes:jpeg,png,gif',
+    'type' => 'required',
+    'unit' => 'required',
+    'constituent' => 'required',
+    'package'=>'required',
+    'price'=>'required'
+    ]);
+     
+      if(Input::hasfile('file'))
+    {
+      $file=Input::file('file');
+      $file->move('uploads',$file->getClientOriginalName());
+     DB::table('generic')
+     ->where('id',$request->input('id'))
+     ->update([
+    'name' => $request->input('name'),
+    'brand' => $request->input('brand'),
+    'filepath' => $file->getClientOriginalName(),
+    'type' => $request->input('type'),
+    'unit' => $request->input('unit'),
+    'constituent' => $request->input('constituent'),
+    'package' => $request->input('package'),
+    'price' => $request->input('price'),
+    ]); 
+    }
+    else
+    {
+
+     DB::table('generic')
+     ->where('id',$request->input('id'))
+     ->update([
+    'name' => $request->input('name'),
+    'brand' => $request->input('brand'),
+    'type' => $request->input('type'),
+    'unit' => $request->input('unit'),
+    'constituent' => $request->input('constituent'),
+    'package' => $request->input('package'),
+    'price' => $request->input('price'),
+    ]);
+    } 
+     Session::flash('added_generic', 'Generic added successfully!');
+    return redirect('admin/index');
+  }
 }

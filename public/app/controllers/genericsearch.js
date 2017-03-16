@@ -2,7 +2,7 @@ app.controller('genericsearch', function($scope,$http) {
     
     $scope.generic = function(term) {
     	console.log(term);
-        return $http.get('api/search/'+term).then(function(response) {
+        return $http.get('http://localhost:8000/api/search/'+term).then(function(response) {
             console.log(response.data);
             $scope.data=response.data;
             
@@ -18,7 +18,7 @@ app.controller('genericsearch', function($scope,$http) {
         document.getElementById('searchGeneric').onkeydown = function(event) {
     if (event.keyCode == 13) {
         console.log('Inside if', term);
-        $http.get('api/search/' + term).then(function(response) {
+        $http.get('http://localhost:8000/api/search/' + term).then(function(response) {
             console.log('Inside $http.get' , response.data);
             $scope.data=response.data;
             
@@ -32,7 +32,7 @@ app.controller('genericsearch', function($scope,$http) {
         
     
         console.log('Inside if', term);
-        $http.get('api/search/' + term).then(function(response) {
+        $http.get('http://localhost:8000/api/search/' + term).then(function(response) {
             console.log('Inside $http.get' , response.data);
             $scope.data=response.data;
             

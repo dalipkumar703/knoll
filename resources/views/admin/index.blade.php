@@ -47,9 +47,30 @@
 </nav>
 
 <div class="container">
+ @if(Session::has('added_generic'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('added_generic')}}
+        </div>
+ </div>
+ @endif
+ <div class="row">
+<div class="col-md-6">
+ <a href="#demo" class="btn btn-primary btn-block" data-toggle="collapse">Add new generic</a>
+ </div>
+ <div class="col-md-6">
+ <a href="#demo1" class="btn btn-primary btn-block" data-toggle="collapse">Add new brand</a>
+ </div>
+ 
+ </div>
+ <div class="row" style="padding:2px;">
+  
+ </div>
  
   <div class="row">
-    <div class="col-md-5" style="background-color: #ecffee;">
+  
+    <div class="col-md-5 collapse" style="background-color: #ecffee;" id="demo">
      <br>
   <h2 ><center>Add New Generic</center></h2>
   
@@ -103,8 +124,9 @@
     </form>
     </div>
     <div class="col-md-2"></div>
-    <div class="col-md-5" style="background-color: #ecffee;">
-     <div class="row" >
+    
+    <div class="col-md-5 collapse" style="background-color: #ecffee;" id="demo1">
+     <div class="row">
      <br>
   <h2><center>Add New Brand</center></h2>
   </div>
@@ -139,7 +161,95 @@
     </form>
     </div>
   </div>
+  <!-- update generic-->
+  <div class="row">
+ <div class="col-md-6">
+  <a href="#demo2" class="btn btn-primary btn-block" data-toggle="collapse">Update generic</a>
+ </div>
+ </div>
+  <div class="row" >
+  <div class="col-md-12 collapse" id="demo2">
+         <div class="row text-center" ng-controller="genericsearch">
+           <br><br>
+           <div class="col-md-12">
+           <div class="col-md-offset-2 col-md-8 text-center">
+
+            <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults"
+            typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" style="display: inline-block; width: 50%;" id="searchGeneric" ng-keydown="enterPressedOnSearch(asyncSelected)" autocomplete="off" autofocus="" />
+           <button class="btn btn-primary" ng-click="clickedOnSearch(asyncSelected)" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+           </div>
+           </div>
+           <div style="display:block;">
+           
+           <div>
+    
+    <i ng-show="loadingGeneric" class="glyphicon glyphicon-refresh"></i>
+    </div>
+    <div ng-show="noResults">
+      <div><i class="glyphicon glyphicon-remove"></i> No Results Found</div>
+    </div>
+
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div class="col-md-12 text-center">
+      
+
+      <div class="col-md-offset-1 col-md-9" ng-if="asyncSelected">
+      <div class="table-responsive">          
+  <table class="table table-hover">
+  <thead>
+  <tr>
+    <td>
+     Name
+    </td>
+    <td>
+    Type
+    </td>
+    <td>
+    Unit
+    </td>
+    <td>
+    Constituent
+    </td>
+    <td>
+     Package
+    </td>
+    <td>
+    Price
+    </td>
+    <td>
+    Edit
+    </td>
+    <td>
+    Delete	
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="x in data">
+    <td> <% x.name %></td>
+    <td><% x.type %></td>
+    <td><% x.unit %></td>
+    <td><% x.constituent %></td>
+    <td><% x.package %></td>
+    <td><% x.price %></td>
+    <td><a href="{{url('admin/generic/update/<% x.id %>')}}">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    
+
+    </div>
+        </div>
+  </div>
+
+  </div>
 </div>
-</body>
-</html>
+<script src="{{url('app/controllers/genericsearch.js')}}"></script>
 @stop
