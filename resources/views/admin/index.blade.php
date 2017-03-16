@@ -55,6 +55,22 @@
         </div>
  </div>
  @endif
+  @if(Session::has('deleted_generic'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('deleted_generic')}}
+        </div>
+ </div>
+ @endif
+  @if(Session::has('added_brand'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('added_brand')}}
+        </div>
+ </div>
+ @endif
  <div class="row">
 <div class="col-md-6">
  <a href="#demo" class="btn btn-primary btn-block" data-toggle="collapse">Add new generic</a>
@@ -130,33 +146,41 @@
      <br>
   <h2><center>Add New Brand</center></h2>
   </div>
-    <form ng-submit="">
-   <div class="form-group">
+    <form method="post" action="{{route('addBrand')}}" class="form-vertical">
+   <div class="form-group{{ $errors->has('brand1') ? ' has-error' : '' }}">
     <label for="brand">Brand</label>
-    <input class="form-control" id="brand" name="brand" type="text">
+    <input class="form-control" id="brand" name="brand1" type="text">
+    <span class="help-block">{{ $errors->first('brand1') }}</span>
    </div>
-   <div class="form-group">
+   <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
     <label for="category">Category</label>
     <input class="form-control" id="category" name="category" type="text">
+    <span class="help-block">{{ $errors->first('category') }}</span>
    </div>
-   <div class="form-group">
+   <div class="form-group{{ $errors->has('unit1') ? ' has-error' : '' }}">
     <label for="unit">Unit</label>
-    <input class="form-control" id="unit" name="unit" type="text">
+    <input class="form-control" id="unit" name="unit1" type="text">
+    <span class="help-block">{{ $errors->first('unit1') }}</span>
    </div>
-   <div class="form-group">
+   <div class="form-group{{ $errors->has('packageunit') ? ' has-error' : '' }}">
     <label for="packageunit">Package</label>
     <input class="form-control" id="packageunit" name="packageunit" type="text">
+    <span class="help-block">{{ $errors->first('packageunit') }}</span>
    </div>
-   <div class="form-group">
+   <div class="form-group{{ $errors->has('price1') ? ' has-error' : '' }}">
     <label for="price">Price</label>
-    <input class="form-control" id="price" name="price" type="text">
+    <input class="form-control" id="price" name="price1" type="text">
+    <span class="help-block">{{ $errors->first('price1') }}</span>
    </div>
-   <div class="form-group">
+   <div class="form-group{{ $errors->has('priceunit') ? ' has-error' : '' }}">
     <label for="priceunit">Price Unit</label>
     <input class="form-control" id="priceunit" name="priceunit" type="text">
+    <span class="help-block">{{ $errors->first('priceunit') }}</span>
    </div>
    <div class="form-group">
     <input class="btn btn-default"  type="submit" value="Submit">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	 <input type="hidden" name="_token" value="{{ Session::token() }}">
    </div>
     </form>
     </div>
@@ -236,7 +260,7 @@
     <td><% x.package %></td>
     <td><% x.price %></td>
     <td><a href="{{url('admin/generic/update/<% x.id %>')}}">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="{{url('admin/generic/delete/<% x.id %>')}}">Delete</a></td>
     </tr>
     </tbody>
     </table>

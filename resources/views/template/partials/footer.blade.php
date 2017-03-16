@@ -1,5 +1,5 @@
 
-@if(!Request::is('admin')&& !Request::is('admin/index')&& !Request::is('admin/generic/update'))
+@if(!Request::is('admin')&& !Request::is('admin/index')&& !Request::is('admin/generic/update/')&& !Request::is('admin/generic/update/*'))
 <div id="fh5co-footer" role="contentinfo">
 		
 		<div class="container">

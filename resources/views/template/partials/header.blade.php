@@ -7,7 +7,7 @@
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 					<a class="navbar-brand" href="{{url('/')}}"><span>Knoll</span> Healthcare</a> 
 				</div>
-				@if(!Request::is('admin')&&(!Request::is('admin/index'))&&!Request::is('admin/generic/update'))
+				@if(!Request::is('admin')&&(!Request::is('admin/index'))&&!Request::is('admin/generic/update/*'))
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active">

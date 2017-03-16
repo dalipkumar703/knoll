@@ -129,4 +129,35 @@ class AdminController extends Controller
      Session::flash('added_generic', 'Generic added successfully!');
     return redirect('admin/index');
   }
+  public function deleteGeneric($id)
+  {
+    DB::table('generic')
+        ->where('id',$id)->delete();
+        Session::flash('deleted_generic','Genereic deleted successfully');
+        return redirect()->back();
+  }
+  public function addBrand(Request $request)
+  {
+    $this->validate($request,[
+    'brand1' => 'required',
+    'category'=>'required',
+    'unit1' => 'required',
+    'packageunit'=>'required',
+    'price1'=>'required',
+    'priceunit'=>'required'
+    ]);
+      DB::table('brand')->update([
+    'brand' => $request->input('brand1'),
+    'category' => $request->input('category'),
+    'unit' => $request->input('unit1'),
+    'packageunit' => $request->input('packageunit'),
+    'price' => $request->input('price1'),
+    'priceunit'=>$request->input('priceunit'),
+    ]);
+     
+     Session::flash('added_brand', 'Brand added successfully!');
+    return redirect('admin/index');
+  
+  }
+
 }
