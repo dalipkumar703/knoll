@@ -71,6 +71,21 @@ Route::group(array('prefix'=>'admin'),function()
       	'uses'=>'AdminController@addBrand',
       	'as'=>'addBrand',
       	]);
+      //brand updating
+      Route::get('brand/update/{id}',[
+       'uses'=>'AdminController@updateBrand',
+       'as'=>'updateBrand',
+      	]);
+      //brand update
+      Route::post('brand/updatevalue',[
+      	'uses'=>'AdminController@updateBrandValue',
+      	'as'=>'updateBrandValue',
+      	]);
+      //brand delete
+      Route::get('brand/delete/{id}',[
+      	'uses'=>'AdminController@deleteBrand',
+      	'as'=>'deleteBrand',
+      	]);
 });
 Route::get('/brand',function() {
    return view('brand');

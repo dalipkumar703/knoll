@@ -141,23 +141,94 @@ class AdminController extends Controller
     $this->validate($request,[
     'brand1' => 'required',
     'category'=>'required',
+    'file1' => 'required|mimes:jpeg,png,gif',
     'unit1' => 'required',
     'packageunit'=>'required',
     'price1'=>'required',
     'priceunit'=>'required'
     ]);
-      DB::table('brand')->update([
+
+      if(Input::hasfile('file1'))
+    {
+      $file=Input::file('file1');
+      $file->move('uploads',$file->getClientOriginalName());
+        DB::table('brand')->insert([
+    'brand' => $request->input('brand1'),
+    'category' => $request->input('category'),
+    'file'=> $file->getClientOriginalName(),
+    'unit' => $request->input('unit1'),
+    'packageunit' => $request->input('packageunit'),
+    'price' => $request->input('price1'),
+    'priceunit'=>$request->input('priceunit'),
+    ]);
+      }
+   
+   
+     
+     Session::flash('added_brand', 'Brand added successfully!');
+    return redirect('admin/index');
+  
+  }
+  public function updateBrand($id)
+  {
+   $brand=DB::table('brand')
+             ->where('id',$id)
+             ->first();
+      
+    return view('admin.updatebrand')->with('brand',$brand); 
+  }
+  public function updateBrandValue(Request $request)
+  {
+  $this->validate($request,[
+    'brand1' => 'required',
+    'category'=>'required',
+    'file1' => 'mimes:jpeg,png,gif',
+    'unit1' => 'required',
+    'packageunit'=>'required',
+    'price1'=>'required',
+    'priceunit'=>'required'
+    ]);
+     
+      if(Input::hasfile('file1'))
+    {
+      $file=Input::file('file1');
+      $file->move('uploads',$file->getClientOriginalName());
+     DB::table('brand')
+     ->where('id',$request->input('id'))
+     ->update([
+     'brand' => $request->input('brand1'),
+    'category' => $request->input('category'),
+    'file'=> $file->getClientOriginalName(),
+    'unit' => $request->input('unit1'),
+    'packageunit' => $request->input('packageunit'),
+    'price' => $request->input('price1'),
+    'priceunit'=>$request->input('priceunit'),
+    ]); 
+    }
+    else
+    {
+
+     DB::table('brand')
+     ->where('id',$request->input('id'))
+     ->update([
     'brand' => $request->input('brand1'),
     'category' => $request->input('category'),
     'unit' => $request->input('unit1'),
     'packageunit' => $request->input('packageunit'),
     'price' => $request->input('price1'),
     'priceunit'=>$request->input('priceunit'),
-    ]);
-     
-     Session::flash('added_brand', 'Brand added successfully!');
+        ]); 
+    } 
+     Session::flash('updated_brand', 'Updated successfully!');
     return redirect('admin/index');
-  
+  }
+
+  public function deleteBrand($id)
+  {
+      DB::table('brand')
+        ->where('id',$id)->delete();
+        Session::flash('deleted_brand',' Deleted successfully!');
+        return redirect()->back();
   }
 
 }

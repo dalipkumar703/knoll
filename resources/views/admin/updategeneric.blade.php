@@ -14,9 +14,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generic
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add Generic</a></li>
+          <li><a href="{{url('admin/index/#demo')}}"  data-toggle="collapse">Add Generic</a></li>
           <li><a href="#">Update Generic</a></li>
-          <li><a href="#">Delete Generic</a></li>
+          
         </ul>
       </li>
       <li class="dropdown">

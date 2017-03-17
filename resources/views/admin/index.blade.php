@@ -14,18 +14,18 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generic
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add Generic</a></li>
-          <li><a href="#">Update Generic</a></li>
-          <li><a href="#">Delete Generic</a></li>
+          <li><a href="#demo"  data-toggle="collapse">Add Generic</a></li>
+          <li><a href="#demo2"  data-toggle="collapse">Update Generic</a></li>
+          
         </ul>
       </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Brand
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add Brand</a></li>
-          <li><a href="#">Update Brand</a></li>
-          <li><a href="#">Delete Brand</a></li>
+          <li><a href="#demo1"  data-toggle="collapse">Add Brand</a></li>
+          <li><a href="#demo3"  data-toggle="collapse">Update Brand</a></li>
+          
         </ul>
       </li>
     </ul>
@@ -52,6 +52,22 @@
   <div class="alert alert-success fade in">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success:</strong> {{Session::get('added_generic')}}
+        </div>
+ </div>
+ @endif
+  @if(Session::has('updated_brand'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('updated_brand')}}
+        </div>
+ </div>
+ @endif
+ @if(Session::has('deleted_brand'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('deleted_brand')}}
         </div>
  </div>
  @endif
@@ -146,7 +162,7 @@
      <br>
   <h2><center>Add New Brand</center></h2>
   </div>
-    <form method="post" action="{{route('addBrand')}}" class="form-vertical">
+    <form method="post" action="{{route('addBrand')}}" class="form-vertical" enctype="multipart/form-data">
    <div class="form-group{{ $errors->has('brand1') ? ' has-error' : '' }}">
     <label for="brand">Brand</label>
     <input class="form-control" id="brand" name="brand1" type="text">
@@ -157,6 +173,11 @@
     <input class="form-control" id="category" name="category" type="text">
     <span class="help-block">{{ $errors->first('category') }}</span>
    </div>
+  <div class="form-group{{ $errors->has('file1') ? ' has-error' : '' }}">
+<label class="form-label">Brand Image</label>
+<input id="photo" type="file"  name="file1" value="">
+<span class="help-block">{{ $errors->first('file1') }}</span>
+    </div>
    <div class="form-group{{ $errors->has('unit1') ? ' has-error' : '' }}">
     <label for="unit">Unit</label>
     <input class="form-control" id="unit" name="unit1" type="text">
@@ -189,6 +210,9 @@
   <div class="row">
  <div class="col-md-6">
   <a href="#demo2" class="btn btn-primary btn-block" data-toggle="collapse">Update generic</a>
+ </div>
+ <div class="col-md-6">
+  <a href="#demo3" class="btn btn-primary btn-block" data-toggle="collapse">Update brand</a>
  </div>
  </div>
   <div class="row" >
@@ -274,6 +298,146 @@
   </div>
 
   </div>
+  <!-- Update brand-->
+  <div class="row collapse" ng-controller="brandsearch" id="demo3">
+<form ng-submit="brandSubmit()">
+<div class="col-md-offset-2 col-md-4" style="padding-right:0px;">
+<div class="form-group">
+    <label for="brand">Brand</label>
+	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name..." autocomplete="off" autofocus="" required="">
+<i ng-show="loadingBrand" class="glyphicon glyphicon-refresh"></i>
+    <div ng-show="noResults">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+</div>
+</div>
+</div>
+
+<div class="col-md-3" style="padding-right:0px;">
+<div class="form-group">
+<label for="category">Category</label>
+<select id="category" class="form-control" ng-model="category">
+	<option value="">--- Select ---</option>
+                          <option value="B.Complex and Multi Vitamins Preparations" 
+                                        class=even > B.Complex and Multi Vitamins Preparations</option>
+                                        <option value="Calcium with Vit D3 Preparations" 
+                                        class=odd > Calcium with Vit D3 Preparations</option>
+                                        <option value="Iron Preparations" 
+                                        class=even > Iron Preparations</option>
+                                        <option value="Cough Syrups (Decongestants, Bronchodialator etc.)" 
+                                        class=odd > Cough Syrups (Decongestants, Bronchodialator etc.)</option>
+                                        <option value="Locally Acting Skin Preparations" 
+                                        class=even > Locally Acting Skin Preparations</option>
+                                        <option value="Locally Acting Eye Preparations" 
+                                        class=odd > Locally Acting Eye Preparations</option>
+                                        <option value="Locally Acting Nasal Preparations (For Nose)" 
+                                        class=even > Locally Acting Nasal Preparations (For Nose)</option>
+                                        <option value="Locally Acting Preparations For Mouth and Throat" 
+                                        class=odd > Locally Acting Preparations For Mouth and Throat</option>
+                                        <option value="Locally Acting Ear Preparations" 
+                                        class=even > Locally Acting Ear Preparations</option>
+                                        <option value="Specified Group" 
+                                        class=odd > Specified Group</option>
+                                        <option value="Preparations for Intravenous Infusions" 
+                                        class=even > Preparations for Intravenous Infusions</option>
+                                        <option value="Locally Acting Musculo-Skeletal Preparations" 
+                                        class=odd > Locally Acting Musculo-Skeletal Preparations</option>
+                                        <option value="Locally Acting Drugs On Colon And Rectum" 
+                                        class=even > Locally Acting Drugs On Colon And Rectum</option>
+                                        <option value="Locally Acting Intravaginal Preparations" 
+                                        class=odd > Locally Acting Intravaginal Preparations</option>
+                                        <option value="Inhalers, Puffs and Drugs for Nebulization" 
+                                        class=even > Inhalers, Puffs and Drugs for Nebulization</option>
+                                        <option value="Locally Acting Eye/Ear Preparations" 
+                                        class=odd > Locally Acting Eye/Ear Preparations</option>
+                                        <option value="Locally acting specified group" 
+                                        class=even > Locally acting specified group</option>
+</select>
+</div>
+
+</div>
+
+<div class="col-md-2">
+<div class="form-group">
+<br>
+<button type="submit" class="btn btn-primary" style="
+    margin-top: 5px;">
+  <span class="glyphicon glyphicon-search"></span>
+</button>
+</div>
+</div>
+</form>
+<div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+<div class="col-md-12 text-center">
+<div ng-if="!(searchSuccessfull) && searchInitialised" class="text-center">
+    
+    <span>Your search didn't match anything</span>
+</div>
+</div>
+<div class="col-md-12 text-center">
+      
+
+      <div class="col-md-offset-1 col-md-9" ng-if="searchSuccessfull">
+      <div class="table-responsive">          
+  <table class="table table-hover">
+  <thead>
+  <tr>
+    <td>
+    Brand
+    </td>
+    <td>
+    Category
+    </td>
+    <td>
+    Unit
+    </td>
+    <td>
+    Package Unit
+    </td>
+    <td>
+    Price
+    </td>
+    <td>
+    Price/Unit
+    </td>
+    <td>
+    Edit
+    </td>
+    <td>
+    Delete
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  
+  <tr ng-repeat="brand in brandData">
+
+    <td>
+     <% brand.brand %>
+    </td>
+    <td><% brand.category %></td>
+    <td><% brand.unit %></td>
+    <td><% brand.packageunit %></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
+    
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.priceunit %></td>
+    <td>
+    <a href="{{url('admin/brand/update/<% brand.id %>')}}">Edit</a>
+    </td>
+    <td>
+    <a href="{{url('admin/brand/delete/<% brand.id %>')}}">Delete</a>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+</div>
+
 </div>
 <script src="{{url('app/controllers/genericsearch.js')}}"></script>
+<script src="{{url('app/controllers/brandsearch.js')}}"></script>
 @stop
