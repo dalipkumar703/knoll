@@ -22,6 +22,7 @@ class brandController extends Controller
     {
           $brands=DB::table('brand')
             ->where('brand','LIKE',$term.'%')
+            ->take(10)
             ->get();
             return response()->json($brands);
        
@@ -32,6 +33,7 @@ class brandController extends Controller
          $brand=DB::table('brand')
             ->where('brand',$brand)
             ->orWhere('category',$category)
+            ->take(10)
             ->get();
             return response()->json($brand);
             

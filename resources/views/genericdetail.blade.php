@@ -26,7 +26,7 @@
     <tbody>
       <tr>
         
-        <td>{{$generic->name }}</td>
+        <td>{{$generic->name}}</td>
         <td>{{$generic->type}}</td>
         <td>{{$generic->unit}}</td>
         <td>{{$generic->constituent}}</td>
