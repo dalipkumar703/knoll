@@ -256,6 +256,9 @@
     Type
     </td>
     <td>
+    Image
+    </td>
+    <td>
     Unit
     </td>
     <td>
@@ -279,6 +282,8 @@
   <tr ng-repeat="x in data">
     <td> <% x.name %></td>
     <td><% x.type %></td>
+    <td><img src="http://localhost:8000/
+    uploads/<% x.filepath %>" height="50" width="50"></td>
     <td><% x.unit %></td>
     <td><% x.constituent %></td>
     <td><% x.package %></td>
@@ -391,6 +396,9 @@
     Category
     </td>
     <td>
+    Image
+    </td>
+    <td>
     Unit
     </td>
     <td>
@@ -418,6 +426,7 @@
      <% brand.brand %>
     </td>
     <td><% brand.category %></td>
+    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="50" width="50"></td>
     <td><% brand.unit %></td>
     <td><% brand.packageunit %></td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>

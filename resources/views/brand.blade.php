@@ -103,6 +103,9 @@
     Category
     </td>
     <td>
+    Image
+    </td>
+    <td>
     Type
     </td>
     <td>
@@ -124,7 +127,10 @@
      <% brand.brand %>
     </td>
     <td><% brand.category %></td>
+    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="50" width="50"></td>
+ 
     <td><% brand.type %></td>
+
     <td><% brand.packageunit %></td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
     

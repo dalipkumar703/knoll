@@ -49,6 +49,9 @@
     Type
     </td>
     <td>
+    Image
+    </td>
+    <td>
     Package
     </td>
     <td>
@@ -62,8 +65,8 @@
      <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
     </td>
     <td><% x.type %></td>
+    <td><img src="http://localhost:8000/uploads/<% x.filepath %>" height="50" width="50"></td>
     <td><% x.package %></td>
-    
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.price %></td>
     </tr>
     </tbody>
