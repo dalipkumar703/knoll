@@ -20,6 +20,8 @@ class Generic extends Migration
             $table->string('constituent');
             $table->string('package');
             $table->string('price');
+            $table->string('brand');
+            $table->string('filepath');
             $table->rememberToken();
             $table->timestamps();
         });

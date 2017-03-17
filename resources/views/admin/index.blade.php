@@ -267,11 +267,26 @@
     Type
     </td>
     <td>
-    Package
+    Image
+    </td>
+    <td>
+    Unit
+    </td>
+    <td>
+    Constituent
+    </td>
+    <td>
+     Package
     </td>
     <td>
     Price
     </td>
+     <td>
+    Edit
+    </td>
+    <td>
+    Delete  
+</td>
   </tr>
   </thead>
   <tbody>
@@ -280,9 +295,15 @@
      <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
     </td>
     <td><% x.type %></td>
+    <td><img src="http://localhost:8000/uploads/<% x.filepath %>" height="120" width="180"></td>
+    <td><% x.unit %></td>
+    <td><% x.constituent %></td>
     <td><% x.package %></td>
+
     
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.price %></td>
+    <td><a href="{{url('admin/generic/update/<% x.id %>')}}">Edit</a></td>
+<td><a href="{{url('admin/generic/delete/<% x.id %>')}}">Delete</a></td>
     </tr>
     </tbody>
     </table>
@@ -398,6 +419,9 @@
     Category
     </td>
     <td>
+    Image
+    </td>
+    <td>
     Unit
     </td>
     <td>
@@ -425,6 +449,7 @@
      <% brand.brand %>
     </td>
     <td><% brand.category %></td>
+    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="120" width="180"></td>
     <td><% brand.unit %></td>
     <td><% brand.packageunit %></td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
