@@ -29,8 +29,63 @@ Route::group(array('prefix'=>'api'), function()
     	'uses'=>'BrandController@showBrandDetail',
     	'as'=>'brand.detail'
     	]);
+    Route::get('admin/{username}/{password}',[
+    	'uses'=>'AdminController@login',
+    	'as' =>'login',
+    	]);
 			
 
+});
+Route::group(array('prefix'=>'admin'),function() 
+{
+	//admin login page
+  Route::get('/',function() {
+   return view('admin.home');
+  });
+  //admin home page
+  Route::get('/index','AdminController@indexShow');
+  //logout admin area
+  Route::get('/logout','AdminController@deleteSession');
+  //generic add
+   Route::post('generic/add',[
+    'uses'=>'AdminController@addGeneric',
+    'as'=>'addGeneric'
+   	]); 
+   //generic update
+   Route::get('generic/update/{id}',[
+   	'uses'=>'AdminController@updateGeneric',
+     'as'=>'showUpdate'
+   	]);
+   //update generic value
+      Route::post('generic/updatevalue',[
+   	'uses'=>'AdminController@updateGenericValue',
+   	'as'=>'updateGenericValue'
+   	]);
+      //delete generic
+      Route::get('generic/delete/{id}',[
+     'uses'=>'AdminController@deleteGeneric',
+     'as'=>'deleteGeneric'
+      	]);
+      //brand add
+      Route::post('brand/add',[
+      	'uses'=>'AdminController@addBrand',
+      	'as'=>'addBrand',
+      	]);
+      //brand updating
+      Route::get('brand/update/{id}',[
+       'uses'=>'AdminController@updateBrand',
+       'as'=>'updateBrand',
+      	]);
+      //brand update
+      Route::post('brand/updatevalue',[
+      	'uses'=>'AdminController@updateBrandValue',
+      	'as'=>'updateBrandValue',
+      	]);
+      //brand delete
+      Route::get('brand/delete/{id}',[
+      	'uses'=>'AdminController@deleteBrand',
+      	'as'=>'deleteBrand',
+      	]);
 });
 Route::get('/brand',function() {
    return view('brand');
