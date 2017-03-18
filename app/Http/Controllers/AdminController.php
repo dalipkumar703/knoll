@@ -230,5 +230,41 @@ class AdminController extends Controller
         Session::flash('deleted_brand',' Deleted successfully!');
         return redirect()->back();
   }
+  private function _import_csv($path, $filename)
+{
+
+$csv = $path . $filename; 
+
+
+$query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE `generic` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 LINES (`name`, `brand`, `filepath`,`type`,`unit`,`constituent`,`package`, `price`)", addslashes($csv));
+
+return DB::connection()->getpdo()->exec($query);
+
+}
+public function _import_brand_csv($path,$filename)
+{
+  $csv = $path . $filename; 
+
+
+$query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE `generic` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 LINES (`name`, `brand`, `filepath`,`type`,`unit`,`constituent`,`package`, `price`)", addslashes($csv));
+
+return DB::connection()->getpdo()->exec($query);  
+}
+public function postUpload()
+{
+
+    if (Input::hasFile('file')){
+        
+        $file = Input::file('file');
+        //check out the edit content on bottom of my answer for details on $storage
+        // Moves file to folder on server
+        $file->move('uploads',$file->getClientOriginalName());
+
+        // Import the moved file to DB and return OK if there were rows affected
+        return ( $this->_import_csv('uploads/',$file->getClientOriginalName()) ? 'OK' : 'No rows affected' );            
+
+     }
+     dd("outside loop");
+}
 
 }

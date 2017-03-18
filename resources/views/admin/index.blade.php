@@ -445,7 +445,30 @@
     </div>
     </div>
 </div>
+<!-- Update in bulk-->
+<div class="row">
+<div class="col-md-6">
 
+  <a href="#demo4" class="btn btn-primary btn-block" data-toggle="collapse">Add generic in Bulk</a>
+
+</div>
+<div class="col-md-6">
+   <a href="" class="btn btn-primary btn-block" data-toggle="collapse">Add brand in Bulk</a>
+</div>
+<div class="row collapse" id="demo4">
+<form class="form-vertical" method="post" action="{{route('postUpload')}}" enctype="multipart/form-data">
+<div class="form-group">
+<label for="file">Upload CSV</label>
+<input type="file" name="file" id="file" autocomplete="off">
+</div>
+<div class="form-group">
+<input type="submit" value="Submit" class="btn btn-default">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	 <input type="hidden" name="_token" value="{{ Session::token() }}">
+</div>
+</form>
+</div>
+</div>
 </div>
 <script src="{{url('app/controllers/genericsearch.js')}}"></script>
 <script src="{{url('app/controllers/brandsearch.js')}}"></script>
