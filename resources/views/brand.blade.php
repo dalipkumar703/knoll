@@ -127,7 +127,7 @@
      <% brand.brand %>
     </td>
     <td><% brand.category %></td>
-    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="50" width="50"></td>
+    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="120" width="180"></td>
  
     <td><% brand.type %></td>
 
@@ -148,5 +148,6 @@
 
 
   <script src="app/controllers/brandsearch.js"></script>
+  
 </section>
 @stop

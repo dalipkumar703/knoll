@@ -50,5 +50,6 @@ app.controller('brandsearch', function($scope,$http) {
 
 
     };
+    
 });
 

@@ -21,6 +21,7 @@ class Brand extends Migration
             $table->string('packageunit');
             $table->string('price');
             $table->string('priceunit');
+            $table->string('file');
             $table->rememberToken();
             $table->timestamps();
         });

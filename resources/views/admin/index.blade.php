@@ -5,9 +5,7 @@
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Knoll</a>
-    </div>
+    
     <ul class="nav navbar-nav">
       
     <li class="dropdown">
@@ -29,16 +27,7 @@
         </ul>
       </li>
     </ul>
-    <form class="navbar-form navbar-left">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+    
     <ul class="nav navbar-nav navbar-right">
     
       <li><a href="{{url('admin/logout')}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
@@ -104,21 +93,17 @@
  </div>
  @endif
  <div class="row">
-<div class="col-md-6">
+  <div class="text-center" >
+  <h1> Create a new entry </h1>
+   </div>
+  </div>
+ <div class="row">
+<div class="col-md-offset-3 col-md-6">
  <a href="#demo" class="btn btn-primary btn-block" data-toggle="collapse">Add new generic</a>
  </div>
- <div class="col-md-6">
- <a href="#demo1" class="btn btn-primary btn-block" data-toggle="collapse">Add new brand</a>
  </div>
- 
- </div>
- <div class="row" style="padding:2px;">
-  
- </div>
- 
-  <div class="row">
-  
-    <div class="col-md-5 collapse" style="background-color: #ecffee;" id="demo">
+ <div class="row">
+ <div class="col-md-offset-3 col-md-6 collapse" style="background-color: #ecffee;" id="demo">
      <br>
   <h2 ><center>Add New Generic</center></h2>
   
@@ -167,13 +152,20 @@
    <div class="form-group">
     <input class="btn btn-default"  type="submit" value="Submit">
      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	 <input type="hidden" name="_token" value="{{ Session::token() }}">
+   <input type="hidden" name="_token" value="{{ Session::token() }}">
    </div>
     </form>
     </div>
-    <div class="col-md-2"></div>
-    
-    <div class="col-md-5 collapse" style="background-color: #ecffee;" id="demo1">
+</div>
+
+ <div>&nbsp;</div>
+ <div class="row">
+ <div class="col-md-offset-3 col-md-6">
+ <a href="#demo1" class="btn btn-primary btn-block" data-toggle="collapse">Add new brand</a>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-md-offset-3 col-md-6 collapse" style="background-color: #ecffee;" id="demo1">
      <div class="row">
      <br>
   <h2><center>Add New Brand</center></h2>
@@ -217,35 +209,54 @@
    <div class="form-group">
     <input class="btn btn-default"  type="submit" value="Submit">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-	 <input type="hidden" name="_token" value="{{ Session::token() }}">
+   <input type="hidden" name="_token" value="{{ Session::token() }}">
    </div>
     </form>
     </div>
+    </div>
+ <hr />
+ 
+ 
+  <div class="col-md-12">
+  
+    
+    
+    
+    
   </div>
   <!-- update generic-->
   <div class="row">
- <div class="col-md-6">
+  <div class="text-center" >
+  <h1> Update an existing entry </h1>
+   </div>
+  </div>
+  <div class="row">
+ <div class="col-md-offset-3 col-md-6">
   <a href="#demo2" class="btn btn-primary btn-block" data-toggle="collapse">Update generic</a>
  </div>
- <div class="col-md-6">
-  <a href="#demo3" class="btn btn-primary btn-block" data-toggle="collapse">Update brand</a>
- </div>
- </div>
-  <div class="row" >
+</div>
+ <div class="row" >
   <div class="col-md-12 collapse" id="demo2">
-         <div class="row text-center" ng-controller="genericsearch">
-           <br><br>
-           <div class="col-md-12">
-           <div class="col-md-offset-2 col-md-8 text-center">
-
+         <div class="row" ng-controller="genericsearch">
+           <div class="col-md-12 text-center">
+           <div>&nbsp;</div>
+  <div>&nbsp;</div>
+           <form ng-submit="clickedOnSearch(asyncSelected)">
+           <div class="col-md-offset-3 col-md-5" style="padding-right: 0px;">
+           <div class="form-group">
             <input type="text" ng-model="asyncSelected" placeholder="Type the generic name..." uib-typeahead="generic for generic in generic($viewValue)" typeahead-loading="loadingGeneric" typeahead-no-results="noResults"
-            typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" style="display: inline-block; width: 50%;" id="searchGeneric" ng-keydown="enterPressedOnSearch(asyncSelected)" autocomplete="off" autofocus="" />
-           <button class="btn btn-primary" ng-click="clickedOnSearch(asyncSelected)" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            typeahead-select-on-exact="true" class="form-control" typeahead-min-length="1" id="searchGeneric"  autocomplete="off" autofocus="" style="width:100%" />
+            </div>
+            </div>
+           <div class="col-md-1">
+           <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
            </div>
-           </div>
-           <div style="display:block;">
+
+           </form>
            
-           <div>
+
+           
+           
     
     <i ng-show="loadingGeneric" class="glyphicon glyphicon-refresh"></i>
     </div>
@@ -253,20 +264,20 @@
       <div><i class="glyphicon glyphicon-remove"></i> No Results Found</div>
     </div>
 
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
+    
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div class="col-md-12 text-center">
       
 
-      <div class="col-md-offset-1 col-md-9" ng-if="asyncSelected">
+      <div class="col-md-offset-1 col-md-9" ng-if="genericSearchSuccessfull">
       <div class="table-responsive">          
   <table class="table table-hover">
+  
   <thead>
   <tr>
     <td>
-     Name
+    Constituent Name
     </td>
     <td>
     Type
@@ -286,26 +297,29 @@
     <td>
     Price
     </td>
-    <td>
+     <td>
     Edit
     </td>
     <td>
-    Delete	
-    </td>
+    Delete  
+</td>
   </tr>
   </thead>
   <tbody>
-  <tr ng-repeat="x in data">
-    <td> <% x.name %></td>
+  <tr ng-repeat="x in genericData">
+    <td> 
+     <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
+    </td>
     <td><% x.type %></td>
-    <td><img src="http://localhost:8000/
-    uploads/<% x.filepath %>" height="50" width="50"></td>
+    <td><img src="http://localhost:8000/uploads/<% x.filepath %>" height="120" width="180"></td>
     <td><% x.unit %></td>
     <td><% x.constituent %></td>
     <td><% x.package %></td>
-    <td><% x.price %></td>
+
+    
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.price %></td>
     <td><a href="{{url('admin/generic/update/<% x.id %>')}}">Edit</a></td>
-    <td><a href="{{url('admin/generic/delete/<% x.id %>')}}">Delete</a></td>
+<td><a href="{{url('admin/generic/delete/<% x.id %>')}}">Delete</a></td>
     </tr>
     </tbody>
     </table>
@@ -315,12 +329,21 @@
     
 
     </div>
-        </div>
   </div>
 
   </div>
+  <div>&nbsp;</div>
+
+  <div class="row">
+ <div class="col-md-offset-3 col-md-6">
+  <a href="#demo3" class="btn btn-primary btn-block" data-toggle="collapse">Update brand</a>
+ </div>
+ </div>
+  
   <!-- Update brand-->
   <div class="row collapse" ng-controller="brandsearch" id="demo3">
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
 <form ng-submit="brandSubmit()">
 <div class="col-md-offset-2 col-md-4" style="padding-right:0px;">
 <div class="form-group">
@@ -442,7 +465,7 @@
      <% brand.brand %>
     </td>
     <td><% brand.category %></td>
-    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="50" width="50"></td>
+    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="120" width="180"></td>
     <td><% brand.unit %></td>
     <td><% brand.packageunit %></td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
@@ -499,6 +522,15 @@
 </form>
 </div>
 
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
+
+<div>&nbsp;</div>
 </div>
 </div>
 </div>
