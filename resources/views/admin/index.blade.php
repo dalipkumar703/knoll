@@ -55,6 +55,22 @@
         </div>
  </div>
  @endif
+  @if(Session::has('csv_generic_uploaded'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('csv_generic_uploaded')}}
+        </div>
+ </div>
+ @endif
+  @if(Session::has('csv_brand_uploaded'))
+ <div class="row">
+  <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success:</strong> {{Session::get('csv_brand_uploaded')}}
+        </div>
+ </div>
+ @endif
   @if(Session::has('updated_brand'))
  <div class="row">
   <div class="alert alert-success fade in">
@@ -453,12 +469,12 @@
 
 </div>
 <div class="col-md-6">
-   <a href="" class="btn btn-primary btn-block" data-toggle="collapse">Add brand in Bulk</a>
+   <a href="#demo5" class="btn btn-primary btn-block" data-toggle="collapse">Add brand in Bulk</a>
 </div>
 <div class="row collapse" id="demo4">
-<form class="form-vertical" method="post" action="{{route('postUpload')}}" enctype="multipart/form-data">
+<form class="form-vertical" method="post" action="{{url('admin/generic/bulk/add')}}" enctype="multipart/form-data">
 <div class="form-group">
-<label for="file">Upload CSV</label>
+<label for="file">Upload Generic CSV</label>
 <input type="file" name="file" id="file" autocomplete="off">
 </div>
 <div class="form-group">
@@ -467,6 +483,22 @@
 	 <input type="hidden" name="_token" value="{{ Session::token() }}">
 </div>
 </form>
+</div>
+<div class="row collapse" id="demo5">
+<div class="col-md-6"></div><div class="col-md-6">
+	<form class="form-vertical" method="post" action="{{url('admin/brand/bulk/add')}}" enctype="multipart/form-data">
+<div class="form-group">
+<label for="file">Upload Brand CSV</label>
+<input type="file" name="file" id="file" autocomplete="off">
+</div>
+<div class="form-group">
+<input type="submit" value="Submit" class="btn btn-default">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	 <input type="hidden" name="_token" value="{{ Session::token() }}">
+</div>
+</form>
+</div>
+
 </div>
 </div>
 </div>

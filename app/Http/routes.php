@@ -91,7 +91,10 @@ Route::group(array('prefix'=>'admin'),function()
       	'uses'=>'AdminController@postUpload',
          'as'=>'postUpload',
          ]);
-      
+      Route::post('brand/bulk/add',[
+      	'uses'=>'AdminController@postUpload',
+         'as'=>'postUpload',
+         ]);
 });
 Route::get('/brand',function() {
    return view('brand');

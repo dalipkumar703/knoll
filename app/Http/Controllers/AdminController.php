@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -246,7 +246,7 @@ public function _import_brand_csv($path,$filename)
   $csv = $path . $filename; 
 
 
-$query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE `generic` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 LINES (`name`, `brand`, `filepath`,`type`,`unit`,`constituent`,`package`, `price`)", addslashes($csv));
+$query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE `brand` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\\n' IGNORE 1 LINES (`brand`, `category`, `file`,`unit`,`packageunit`,`price`, `priceunit`)", addslashes($csv));
 
 return DB::connection()->getpdo()->exec($query);  
 }
@@ -261,10 +261,22 @@ public function postUpload()
         $file->move('uploads',$file->getClientOriginalName());
 
         // Import the moved file to DB and return OK if there were rows affected
-        return ( $this->_import_csv('uploads/',$file->getClientOriginalName()) ? 'OK' : 'No rows affected' );            
+        if(Request::is('admin/generic/bulk/add'))
+        {
+         $this->_import_csv('uploads/',$file->getClientOriginalName()) ;
+         Session::flash('csv_generic_uploaded','Uploaded Successfully!');
+         return redirect()->back();
+        }
+                    
+         if(Request::is('admin/brand/bulk/add'))
+         {
+           $this->_import_brand_csv('uploads/',$file->getClientOriginalName()) ;
+           Session::flash('csv_brand_uploaded','Uploaded Sucessufully!');
+           return redirect()->back();
+         }           
 
      }
-     dd("outside loop");
+    
 }
 
 }
