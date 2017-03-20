@@ -20,8 +20,8 @@ class brandController extends Controller
      */
     public function show($term)
     {
-          $brands=DB::table('brand')
-            ->where('brand','LIKE',$term.'%')
+          $brands=DB::table('product')
+            ->where('productname','LIKE',$term.'%')
             ->take(10)
             ->get();
             return response()->json($brands);
@@ -30,8 +30,8 @@ class brandController extends Controller
     public function showBrandDetail($brand,$category)
     {
         
-         $brand=DB::table('brand')
-            ->where('brand',$brand)
+         $brand=DB::table('product')
+            ->where('productname',$brand)
             ->orWhere('category',$category)
             ->take(10)
             ->get();

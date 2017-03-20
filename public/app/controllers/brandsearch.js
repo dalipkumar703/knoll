@@ -9,7 +9,7 @@ app.controller('brandsearch', function($scope,$http) {
             
             
             return response.data.map(function(item){
-                return item.brand;
+                return item.productname;
             });
 
         });

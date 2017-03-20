@@ -23,16 +23,16 @@ class SearchController extends Controller
 
     {
          
-        $data = Generic::where("name","LIKE","%{$request->input('query')}%")->get();
+        $data = DB::table('product')->where("productname","LIKE","%{$request->input('query')}%")->get();
 
         return response()->json($data);
 
     }
    public function show($term)
 {
-    $generics = DB::table('generic')
-        ->where('constituent', 'LIKE',  $term . '%')
-        ->orWhere('constituent', '=' , '$term')
+    $generics = DB::table('product')
+        ->where('composition', 'LIKE',  $term . '%')
+        ->orWhere('composition', '=' , '$term')
         ->take(10)
         ->get();
 
@@ -40,7 +40,7 @@ class SearchController extends Controller
 }
  public function genericDetail($id)
  {
-   $generic=DB::table('generic')
+   $generic=DB::table('product')
              ->where('id',$id)
              ->first();
 
@@ -48,8 +48,8 @@ class SearchController extends Controller
  }
  public function showBrand($term)
  {
-    $brands=DB::table('brand')
-            ->where('brand','LIKE',$term.'%')
+    $brands=DB::table('product')
+            ->where('composition','LIKE',$term.'%')
             ->get();
             return response()->json($brands);
  }

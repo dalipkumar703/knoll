@@ -96,45 +96,42 @@
   <table class="table table-hover">
   <thead>
   <tr>
-    <td>
-    Brand
-    </td>
-    <td>
-    Category
-    </td>
-    <td>
-    Image
-    </td>
-    <td>
-    Type
-    </td>
-    <td>
-    Package Unit
-    </td>
-    <td>
+     <th>Image</th>
+        <th>Product Name</th>
+        <th>Composition</th>
+        <th>
+    Package
+    </th>
+    <th>
     Price
-    </td>
-    <td>
-    Price/Unit
-    </td>
+    </th>
+    <th>
+    Division
+    </th>
+    <th>
+    Category
+    </th>
   </tr>
   </thead>
   <tbody>
   
   <tr ng-repeat="brand in brandData">
 
+     <td><img src="http://localhost:8000/uploads/<% brand.image %>" height="120" width="180"></td>
     <td>
-     <% brand.brand %>
+    <% brand.productname %>
     </td>
-    <td><% brand.category %></td>
-    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="120" width="180"></td>
- 
-    <td><% brand.type %></td>
-
-    <td><% brand.packageunit %></td>
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
-    
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.priceunit %></td>
+    <td> 
+     <% brand.composition %>
+    </td>
+    <td><% brand.package %></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.mrp %></td>
+    <td>
+    <% brand.division %>
+    </td>
+    <td>
+    <% brand.category %>
+    </td>
     </tr>
     </tbody>
     </table>

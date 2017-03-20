@@ -99,18 +99,18 @@
   </div>
  <div class="row">
 <div class="col-md-offset-3 col-md-6">
- <a href="#demo" class="btn btn-primary btn-block" data-toggle="collapse">Add new generic</a>
+ <a href="#demo" class="btn btn-primary btn-block" data-toggle="collapse">Add new</a>
  </div>
  </div>
  <div class="row">
  <div class="col-md-offset-3 col-md-6 collapse" style="background-color: #ecffee;" id="demo">
      <br>
-  <h2 ><center>Add New Generic</center></h2>
+  <h2 ><center>Add New </center></h2>
   
     <form class="form-vertical" role="form" method="post" action="{{ route('addGeneric')}}" enctype="multipart/form-data">
    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
-    <label for="name">Name</label>
+    <label for="name">ProductName</label>
     <input class="form-control" id="name" name="name" type="text">
     <span class="help-block">{{ $errors->first('name') }}</span>
    </div>
@@ -159,6 +159,7 @@
 </div>
 
  <div>&nbsp;</div>
+ <!-- hide add brand
  <div class="row">
  <div class="col-md-offset-3 col-md-6">
  <a href="#demo1" class="btn btn-primary btn-block" data-toggle="collapse">Add new brand</a>
@@ -232,15 +233,18 @@
   </div>
   <div class="row">
  <div class="col-md-offset-3 col-md-6">
-  <a href="#demo2" class="btn btn-primary btn-block" data-toggle="collapse">Update generic</a>
+  <a href="#demo2" class="btn btn-primary btn-block" data-toggle="collapse">Search by Composition</a>
  </div>
 </div>
  <div class="row" >
   <div class="col-md-12 collapse" id="demo2">
-         <div class="row" ng-controller="genericsearch">
+        <br>
+        <div class="row">
+        <center><h2>Search Generic</h2></center>
+        </div>
+        <div class="row" ng-controller="genericsearch">
            <div class="col-md-12 text-center">
-           <div>&nbsp;</div>
-  <div>&nbsp;</div>
+           
            <form ng-submit="clickedOnSearch(asyncSelected)">
            <div class="col-md-offset-3 col-md-5" style="padding-right: 0px;">
            <div class="form-group">
@@ -276,51 +280,48 @@
   
   <thead>
   <tr>
-    <td>
-    Constituent Name
-    </td>
-    <td>
-    Type
-    </td>
-    <td>
+     <td>
     Image
     </td>
     <td>
-    Unit
+    Product Name
     </td>
     <td>
-    Constituent
+    Composition
     </td>
     <td>
-     Package
+    Package
     </td>
     <td>
     Price
     </td>
-     <td>
-    Edit
+    <td>
+    Division
     </td>
     <td>
-    Delete  
-</td>
+    Category
+    </td>
   </tr>
   </thead>
   <tbody>
   <tr ng-repeat="x in genericData">
-    <td> 
-     <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
+    <td><img src="http://localhost:8000/uploads/<% x.image %>" height="120" width="180"></td>
+    <td>
+    <% x.productname %>
     </td>
-    <td><% x.type %></td>
-    <td><img src="http://localhost:8000/uploads/<% x.filepath %>" height="120" width="180"></td>
-    <td><% x.unit %></td>
-    <td><% x.constituent %></td>
+    <td> 
+     <a href="generic-detail/<% x.id %>" ><% x.composition %></a>
+    </td>
     <td><% x.package %></td>
-
-    
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.price %></td>
-    <td><a href="{{url('admin/generic/update/<% x.id %>')}}">Edit</a></td>
-<td><a href="{{url('admin/generic/delete/<% x.id %>')}}">Delete</a></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.mrp %></td>
+    <td>
+    <% x.division %>
+    </td>
+    <td>
+    <% x.category %>
+    </td>
     </tr>
+
     </tbody>
     </table>
     </div>
@@ -336,19 +337,17 @@
 
   <div class="row">
  <div class="col-md-offset-3 col-md-6">
-  <a href="#demo3" class="btn btn-primary btn-block" data-toggle="collapse">Update brand</a>
+  <a href="#demo3" class="btn btn-primary btn-block" data-toggle="collapse">Search by Brand</a>
  </div>
  </div>
   
   <!-- Update brand-->
-  <div class="row collapse" ng-controller="brandsearch" id="demo3">
-  <div>&nbsp;</div>
-  <div>&nbsp;</div>
+   <div class="row collapse" ng-controller="brandsearch" id="demo3">
 <form ng-submit="brandSubmit()">
 <div class="col-md-offset-2 col-md-4" style="padding-right:0px;">
 <div class="form-group">
     <label for="brand">Brand</label>
-	<input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name..." autocomplete="off" autofocus="" required="">
+  <input type="text" id="brand" ng-model="asyncSelected" uib-typeahead="brand for brand in brand($viewValue)" typeahead-loading="loadingBrand" typeahead-focus-on-select="false" typeahead-no-results="noResults" class="form-control" typeahead-min-length="1" placeholder="Search with brand name..." autocomplete="off" autofocus="" required="">
 <i ng-show="loadingBrand" class="glyphicon glyphicon-refresh"></i>
     <div ng-show="noResults">
       <i class="glyphicon glyphicon-remove"></i> No Results Found
@@ -360,7 +359,7 @@
 <div class="form-group">
 <label for="category">Category</label>
 <select id="category" class="form-control" ng-model="category">
-	<option value="">--- Select ---</option>
+  <option value="">--- Select ---</option>
                           <option value="B.Complex and Multi Vitamins Preparations" 
                                         class=even > B.Complex and Multi Vitamins Preparations</option>
                                         <option value="Calcium with Vit D3 Preparations" 
@@ -428,54 +427,41 @@
   <table class="table table-hover">
   <thead>
   <tr>
-    <td>
-    Brand
-    </td>
-    <td>
-    Category
-    </td>
-    <td>
-    Image
-    </td>
-    <td>
-    Unit
-    </td>
-    <td>
-    Package Unit
-    </td>
-    <td>
+     <th>Image</th>
+        <th>Product Name</th>
+        <th>Composition</th>
+        <th>
+    Package
+    </th>
+    <th>
     Price
-    </td>
-    <td>
-    Price/Unit
-    </td>
-    <td>
-    Edit
-    </td>
-    <td>
-    Delete
-    </td>
+    </th>
+    <th>
+    Division
+    </th>
+    <th>
+    Category
+    </th>
   </tr>
   </thead>
   <tbody>
   
   <tr ng-repeat="brand in brandData">
 
+     <td><img src="http://localhost:8000/uploads/<% brand.image %>" height="120" width="180"></td>
     <td>
-     <% brand.brand %>
+    <% brand.productname %>
     </td>
-    <td><% brand.category %></td>
-    <td><img src="http://localhost:8000/uploads/<% brand.file %>" height="120" width="180"></td>
-    <td><% brand.unit %></td>
-    <td><% brand.packageunit %></td>
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.price %></td>
-    
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.priceunit %></td>
+    <td> 
+     <% brand.composition %>
+    </td>
+    <td><% brand.package %></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% brand.mrp %></td>
     <td>
-    <a href="{{url('admin/brand/update/<% brand.id %>')}}">Edit</a>
+    <% brand.division %>
     </td>
     <td>
-    <a href="{{url('admin/brand/delete/<% brand.id %>')}}">Delete</a>
+    <% brand.category %>
     </td>
     </tr>
     </tbody>
@@ -485,7 +471,12 @@
     </div>
 </div>
 <!-- Update in bulk-->
+
+<div>&nbsp;</div>
 <div class="row">
+  <center><h1>Upload in Bulk</h1></center>
+</div>
+<div class="row"> 
 <div class="col-md-6">
 
   <a href="#demo4" class="btn btn-primary btn-block" data-toggle="collapse">Add generic in Bulk</a>

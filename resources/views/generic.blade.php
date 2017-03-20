@@ -52,14 +52,14 @@
   
   <thead>
   <tr>
-    <td>
-    Constituent Name
-    </td>
-    <td>
-    Type
-    </td>
-    <td>
+     <td>
     Image
+    </td>
+    <td>
+    Product Name
+    </td>
+    <td>
+    Composition
     </td>
     <td>
     Package
@@ -67,18 +67,33 @@
     <td>
     Price
     </td>
+    <td>
+    Division
+    </td>
+    <td>
+    Category
+    </td>
   </tr>
   </thead>
   <tbody>
   <tr ng-repeat="x in genericData">
-    <td> 
-     <a href="generic-detail/<% x.id %>" ><% x.constituent %></a>
+    <td><img src="http://localhost:8000/uploads/<% x.image %>" height="120" width="180"></td>
+    <td>
+    <% x.productname %>
     </td>
-    <td><% x.type %></td>
-    <td><img src="http://localhost:8000/uploads/<% x.filepath %>" height="120" width="180"></td>
+    <td> 
+     <a href="generic-detail/<% x.id %>" ><% x.composition %></a>
+    </td>
     <td><% x.package %></td>
-    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.price %></td>
+    <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span><% x.mrp %></td>
+    <td>
+    <% x.division %>
+    </td>
+    <td>
+    <% x.category %>
+    </td>
     </tr>
+
     </tbody>
     </table>
     </div>

@@ -15,23 +15,33 @@
     <thead>
       <tr>
         
-        <th>Name</th>
-        <th>Type</th>
-        <th>Unit</th>
-        <th>Constituent</th>
-        <th>Package</th>
-        <th>Price</th>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Composition</th>
+        <th>
+    Package
+    </th>
+    <th>
+    Price
+    </th>
+    <th>
+    Division
+    </th>
+    <th>
+    Category
+    </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         
-        <td>{{$generic->name}}</td>
-        <td>{{$generic->type}}</td>
-        <td>{{$generic->unit}}</td>
-        <td>{{$generic->constituent}}</td>
-        <td>{{$generic->package}}</td>
-        <td>{{$generic->price}}</td>
+        <td><img src="http://localhost:8000/uploads/{{$generic->image}}" height="120" width="180"></td>
+        <td>{{$generic->productname}}</td>
+        <td>{{$generic->composition}}</td>
+        <td>{{$generic->packing}}</td>
+        <td>{{$generic->mrp}}</td>
+        <td>{{$generic->division}}</td>
+        <td>{{$generic->category}}</td>
       </tr>
     </tbody>
   </table>

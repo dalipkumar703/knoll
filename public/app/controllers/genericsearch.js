@@ -6,7 +6,7 @@ app.controller('genericsearch', function($scope,$http) {
             console.log(response.data);
                         
             return response.data.map(function(item){
-                return item.constituent;
+                return item.composition;
             });
 
         });
