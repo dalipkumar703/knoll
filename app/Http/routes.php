@@ -87,7 +87,7 @@ Route::group(array('prefix'=>'admin'),function()
       	'as'=>'deleteBrand',
       	]);
       //generic bulk add
-      Route::post('generic/bulk/add',[
+      Route::post('product/bulk/add',[
       	'uses'=>'AdminController@postUpload',
          'as'=>'postUpload',
          ]);
