@@ -52,19 +52,19 @@ Route::group(array('prefix'=>'admin'),function()
     'as'=>'addGeneric'
    	]); 
    //generic update
-   Route::get('generic/update/{id}',[
-   	'uses'=>'AdminController@updateGeneric',
+   Route::get('product/update/{id}',[
+   	'uses'=>'AdminController@updateProduct',
      'as'=>'showUpdate'
    	]);
    //update generic value
-      Route::post('generic/updatevalue',[
-   	'uses'=>'AdminController@updateGenericValue',
-   	'as'=>'updateGenericValue'
+      Route::post('product/updatevalue',[
+   	'uses'=>'AdminController@updateProductValue',
+   	'as'=>'updateProductValue'
    	]);
       //delete generic
-      Route::get('generic/delete/{id}',[
-     'uses'=>'AdminController@deleteGeneric',
-     'as'=>'deleteGeneric'
+      Route::get('product/delete/{id}',[
+     'uses'=>'AdminController@deleteProduct',
+     'as'=>'deleteProduct'
       	]);
       //brand add
       Route::post('brand/add',[

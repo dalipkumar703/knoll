@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session; 
 use DB;
 use Illuminate\Support\Facades\Input;
+
 class AdminController extends Controller
 {
    public function login($username,$password)
@@ -44,94 +45,87 @@ class AdminController extends Controller
    }
    public function addGeneric(Request $request)
    {
-      $this->validate($request,[
-    'name' => 'required',
-    'brand' => 'required',
+     
+      $this->validate($request , [
+    'productname' => 'required',
+    'composition' => 'required',
     'file' => 'required|mimes:jpeg,png,gif',
-    'type' => 'required',
-    'unit' => 'required',
-    'constituent' => 'required',
-    'package'=>'required',
-    'price'=>'required'
+    'package' => 'required',
+    'price' => 'required'
     ]);
 
     if(Input::hasfile('file'))
     {
       $file=Input::file('file');
       $file->move('uploads',$file->getClientOriginalName());
-     DB::table('generic')->insert([
-    'name' => $request->input('name'),
-    'brand' => $request->input('brand'),
-    'filepath' => $file->getClientOriginalName(),
-    'type' => $request->input('type'),
-    'unit' => $request->input('unit'),
-    'constituent' => $request->input('constituent'),
-    'package' => $request->input('package'),
-    'price' => $request->input('price'),
+     DB::table('product')->insert([
+    'productname' => $request->input('productname'),
+    'composition' => $request->input('composition'),
+    'image' => $file->getClientOriginalName(),
+    'packing' => $request->input('package'),
+    'mrp' => $request->input('price'),
+    'division' => $request->input('division'),
+    'category' => $request->input('category'),
     ]); 
     }
     Session::flash('added_generic', 'Generic added successfully!');
     return redirect()->back();
+
    }
-   public function updateGeneric($id)
+   public function updateProduct($id)
    {
-     $generic=DB::table('generic')
+     $generic=DB::table('product')
              ->where('id',$id)
              ->first();
       
     return view('admin.updategeneric')->with('generic',$generic);
   }
-  public function updateGenericValue(Request $request)
+  public function updateProductValue(Request $request)
   {
     $this->validate($request,[
-    'name' => 'required',
-    'brand' => 'required',
+    'productname' => 'required',
+    'composition' => 'required',
     'file' => 'mimes:jpeg,png,gif',
-    'type' => 'required',
-    'unit' => 'required',
-    'constituent' => 'required',
-    'package'=>'required',
-    'price'=>'required'
+    'package' => 'required',
+    'price' => 'required'
     ]);
      
       if(Input::hasfile('file'))
     {
       $file=Input::file('file');
       $file->move('uploads',$file->getClientOriginalName());
-     DB::table('generic')
+     DB::table('product')
      ->where('id',$request->input('id'))
      ->update([
-    'name' => $request->input('name'),
-    'brand' => $request->input('brand'),
-    'filepath' => $file->getClientOriginalName(),
-    'type' => $request->input('type'),
-    'unit' => $request->input('unit'),
-    'constituent' => $request->input('constituent'),
-    'package' => $request->input('package'),
-    'price' => $request->input('price'),
+    'productname' => $request->input('productname'),
+    'composition' => $request->input('composition'),
+    'image' => $file->getClientOriginalName(),
+    'packing' => $request->input('package'),
+    'mrp' => $request->input('price'),
+    'division' => $request->input('division'),
+    'category' => $request->input('category'),
     ]); 
     }
     else
     {
 
-     DB::table('generic')
+     DB::table('product')
      ->where('id',$request->input('id'))
      ->update([
-    'name' => $request->input('name'),
-    'brand' => $request->input('brand'),
-    'type' => $request->input('type'),
-    'unit' => $request->input('unit'),
-    'constituent' => $request->input('constituent'),
-    'package' => $request->input('package'),
-    'price' => $request->input('price'),
+    'productname' => $request->input('productname'),
+    'composition' => $request->input('composition'),
+    'packing' => $request->input('package'),
+    'mrp' => $request->input('price'),
+    'division' => $request->input('division'),
+    'category' => $request->input('category'),
     ]);
     } 
      Session::flash('added_generic', 'Generic added successfully!');
     return redirect('admin/index');
   }
-  public function deleteGeneric($id)
+  public function deleteProduct($id)
   {
-    DB::table('generic')
+    DB::table('product')
         ->where('id',$id)->delete();
         Session::flash('deleted_generic','Genereic deleted successfully');
         return redirect()->back();
