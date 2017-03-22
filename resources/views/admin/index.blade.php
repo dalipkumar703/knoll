@@ -540,6 +540,10 @@
 <input type="file" name="file" id="file" autocomplete="off">
 </div>
 <div class="form-group">
+<label for="file1">Upload .zip file</label>
+<input type="file" name="file1" id="file1" autocomplete="off">
+</div>
+<div class="form-group">
 <input type="submit" value="Submit" class="btn btn-default">
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
    <input type="hidden" name="_token" value="{{ Session::token() }}">

@@ -8,7 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session; 
 use DB;
+use ZipArchive;
 use Illuminate\Support\Facades\Input;
+use Chumper\Zipper\Zipper;
 
 class AdminController extends Controller
 {
@@ -235,25 +237,53 @@ $query = sprintf("LOAD DATA local INFILE '%s' INTO TABLE `product` FIELDS TERMIN
 return DB::connection()->getpdo()->exec($query);
 
 }
-public function postUpload()
+public function postUpload(Request $request)
 {
-
-    if (Input::hasFile('file')){
-        
-        $file = Input::file('file');
-        //check out the edit content on bottom of my answer for details on $storage
-        // Moves file to folder on server
-        $file->move('uploads',$file->getClientOriginalName());
+    
+    if(Input::hasFile('file') && Input::hasFile('file1'))
+    {
+       $file1=Input::file('file1');
+       $file1->move('uploads',$file1->getClientOriginalName());
+       exec('unzip uploads/'.$file1->getClientOriginalName());
+       $file = Input::file('file');
+      //check out the edit content on bottom of my answer for details on $storage
+      // Moves file to folder on server
+          $file->move('uploads',$file->getClientOriginalName());
 
         // Import the moved file to DB and return OK if there were rows affected
         
-         $this->_import_csv('uploads/',$file->getClientOriginalName()) ;
+         $this->_import_csv('uploads/',$file->getClientOriginalName());
          Session::flash('csv_generic_uploaded','Uploaded Successfully!');
          return redirect()->back();
         
                     
         
+     }elseif(Input::hasFile('file'))
+     {
+       $file = Input::file('file');
+      //check out the edit content on bottom of my answer for details on $storage
+      // Moves file to folder on server
+          $file->move('uploads',$file->getClientOriginalName());
+
+        // Import the moved file to DB and return OK if there were rows affected
+        
+         $this->_import_csv('uploads/',$file->getClientOriginalName());
+         Session::flash('csv_generic_uploaded','Uploaded Successfully!');
+         return redirect()->back();
      }
+     elseif(Input::hasFile('file1')){
+      $file1=Input::file('file1');
+       $file1->move('uploads',$file1->getClientOriginalName());
+       exec('unzip uploads/'.$file1->getClientOriginalName());
+        Session::flash('csv_generic_uploaded','Uploaded Successfully!');
+         return redirect()->back();
+     }
+     else
+     {
+      return redirect()->back();
+     }
+
+  
     
 }
 
