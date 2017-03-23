@@ -2,28 +2,20 @@
 @extends('template.default')
 
 @section('content')
-
+<br>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     
     <ul class="nav navbar-nav">
       
     <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Generic
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#demo"  data-toggle="collapse">Add Generic</a></li>
-          <li><a href="#demo2"  data-toggle="collapse">Update Generic</a></li>
-          
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Brand
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#demo1"  data-toggle="collapse">Add Brand</a></li>
-          <li><a href="#demo3"  data-toggle="collapse">Update Brand</a></li>
-          
+          <li><a href="#demo"  data-toggle="collapse">Add New</a></li>
+          <li><a href="#demo2"  data-toggle="collapse">Update by generic </a></li>
+          <li><a href="#demo3"  data-toggle="collapse">Update by brand </a></li>
+          <li><a href="#demo4"  data-toggle="collapse">Add in Bulk </a></li>
         </ul>
       </li>
     </ul>
@@ -326,6 +318,7 @@
     <td>
     Price
     </td>
+    
     <td>
     Division
     </td>
@@ -342,7 +335,7 @@
   </thead>
   <tbody>
   <tr ng-repeat="x in genericData">
-    <td><img src="http://localhost:8000/uploads/<% x.image %>" height="120" width="180"></td>
+    <td><img src="http://localhost:8000/<% x.image %>" height="120" width="180"></td>
     <td>
     <% x.productname %>
     </td>
@@ -494,7 +487,7 @@
   
   <tr ng-repeat="brand in brandData">
 
-     <td><img src="http://localhost:8000/uploads/<% brand.image %>" height="120" width="180"></td>
+     <td><img src="http://localhost:8000/<% brand.image %>" height="120" width="180"></td>
     <td>
     <% brand.productname %>
     </td>

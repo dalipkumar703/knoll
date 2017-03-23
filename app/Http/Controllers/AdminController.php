@@ -59,7 +59,7 @@ class AdminController extends Controller
     if(Input::hasfile('file'))
     {
       $file=Input::file('file');
-      $file->move('uploads',$file->getClientOriginalName());
+      $file->move(public_path(),$file->getClientOriginalName());
      DB::table('product')->insert([
     'productname' => $request->input('productname'),
     'composition' => $request->input('composition'),
@@ -70,7 +70,7 @@ class AdminController extends Controller
     'category' => $request->input('category'),
     ]); 
     }
-    Session::flash('added_generic', 'Generic added successfully!');
+    Session::flash('added_generic', 'Product added successfully!');
     return redirect()->back();
 
    }
@@ -95,7 +95,7 @@ class AdminController extends Controller
       if(Input::hasfile('file'))
     {
       $file=Input::file('file');
-      $file->move('uploads',$file->getClientOriginalName());
+      $file->move(public_path(),$file->getClientOriginalName());
      DB::table('product')
      ->where('id',$request->input('id'))
      ->update([
@@ -122,14 +122,14 @@ class AdminController extends Controller
     'category' => $request->input('category'),
     ]);
     } 
-     Session::flash('added_generic', 'Generic added successfully!');
+     Session::flash('added_generic', 'Product added successfully!');
     return redirect('admin/index');
   }
   public function deleteProduct($id)
   {
     DB::table('product')
         ->where('id',$id)->delete();
-        Session::flash('deleted_generic','Genereic deleted successfully');
+        Session::flash('deleted_generic','Product deleted successfully');
         return redirect()->back();
   }
   public function addBrand(Request $request)
@@ -147,7 +147,7 @@ class AdminController extends Controller
       if(Input::hasfile('file1'))
     {
       $file=Input::file('file1');
-      $file->move('uploads',$file->getClientOriginalName());
+      $file->move(public_path(),$file->getClientOriginalName());
         DB::table('brand')->insert([
     'brand' => $request->input('brand1'),
     'category' => $request->input('category'),
@@ -188,7 +188,7 @@ class AdminController extends Controller
       if(Input::hasfile('file1'))
     {
       $file=Input::file('file1');
-      $file->move('uploads',$file->getClientOriginalName());
+      $file->move(public_path(),$file->getClientOriginalName());
      DB::table('brand')
      ->where('id',$request->input('id'))
      ->update([
@@ -243,8 +243,8 @@ public function postUpload(Request $request)
     if(Input::hasFile('file') && Input::hasFile('file1'))
     {
        $file1=Input::file('file1');
-       $file1->move('uploads',$file1->getClientOriginalName());
-       exec('unzip uploads/'.$file1->getClientOriginalName());
+       $file1->move(public_path(),$file1->getClientOriginalName());
+       exec('unzip '.$file1->getClientOriginalName());
        $file = Input::file('file');
       //check out the edit content on bottom of my answer for details on $storage
       // Moves file to folder on server
@@ -273,8 +273,8 @@ public function postUpload(Request $request)
      }
      elseif(Input::hasFile('file1')){
       $file1=Input::file('file1');
-       $file1->move('uploads',$file1->getClientOriginalName());
-       exec('unzip uploads/'.$file1->getClientOriginalName());
+       $file1->move(public_path(),$file1->getClientOriginalName());
+       exec('unzip '.$file1->getClientOriginalName());
         Session::flash('csv_generic_uploaded','Uploaded Successfully!');
          return redirect()->back();
      }

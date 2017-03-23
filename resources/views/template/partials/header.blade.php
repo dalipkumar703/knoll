@@ -5,33 +5,33 @@
 				<div class="navbar-header">
 					<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="{{url('/')}}"><span>Knoll</span> Healthcare</a> 
+					<a class="navbar-brand" href="{{url('/')}}"><img src="{{url('images/knoll2.jpg')}}" height="40" width="100"></a> 
 				</div>
 				@if(!Request::is('admin')&&(!Request::is('admin/index'))&&!Request::is('admin/generic/update/*')&&!Request::is('admin/brand/update/*'))
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active">
-						<a href="#" data-nav-section="home" style=""><span>Home</span></a></li>
-						<li><a href="#" data-nav-section="explore"><span>About Us</span></a></li>
+						<li class="{{Request::is('/')?'active':''}}">
+						<a  href="http://localhost:8000" class="external"><span>Home</span></a></li>
+						<li class="{{Request::is('about')?'active':''}}"><a href="http://localhost:8000/about" class="external" ><span>About Us</span></a></li>
 						
 						
-						<li><a href="#" data-nav-section="vision"><span>Vision</span></a></li>
-						<li class="dropdown"><a href="#" class="external" data-nav-section = "services"><span>Products</span></a>
+						<li class="{{Request::is('vision')?'active':''}}"><a href="http://localhost:8000/vision" class="external"><span>Vision</span></a></li>
+						<li class="dropdown"><a href="#" class="external" ><span>Products</span></a>
 						<div class="dropdown-content">
     
-    <a href="{{url('generic')}}" target="_blank" class="external">Generic Name</a>
+    <a href="{{url('generic')}}"  class="external">Generic Name</a>
     
-    <a href="{{url('brand')}}" target="_blank" class="external">Brand Name</a>
+    <a href="{{url('brand')}}"  class="external">Brand Name</a>
   	
   	
   </div>
   </li>
 						
-						<li><a href="#" data-nav-section="faq"><span>Enquiry</span></a></li>
+						<li class="{{Request::is('enquiry')?'active':''}}"><a href="http://localhost:8000/enquiry" class="external"><span>Enquiry</span></a></li>
 						
 						<!--<li class="call-to-action"><a href="#"><span>Sign up free</span></a></li>-->
 						
-						<li><a href="#" class="external"><span>Network</span></a></li>
+						
 						
 					</ul>
 				</div>

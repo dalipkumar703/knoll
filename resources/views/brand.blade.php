@@ -117,7 +117,7 @@
   
   <tr ng-repeat="brand in brandData">
 
-     <td><img src="http://localhost:8000/uploads/<% brand.image %>" height="120" width="180"></td>
+     <td><img src="http://localhost:8000/<% brand.image %>" height="120" width="180"></td>
     <td>
     <% brand.productname %>
     </td>
