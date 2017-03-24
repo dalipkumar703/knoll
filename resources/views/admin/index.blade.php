@@ -136,40 +136,13 @@
 <label for="category">Category</label>
 <select id="category" class="form-control" name="category" >
   <option value="">--- Select ---</option>
-                          <option value="B.Complex and Multi Vitamins Preparations" 
-                                        class=even > B.Complex and Multi Vitamins Preparations</option>
-                                        <option value="Calcium with Vit D3 Preparations" 
-                                        class=odd > Calcium with Vit D3 Preparations</option>
-                                        <option value="Iron Preparations" 
-                                        class=even > Iron Preparations</option>
-                                        <option value="Cough Syrups (Decongestants, Bronchodialator etc.)" 
-                                        class=odd > Cough Syrups (Decongestants, Bronchodialator etc.)</option>
-                                        <option value="Locally Acting Skin Preparations" 
-                                        class=even > Locally Acting Skin Preparations</option>
-                                        <option value="Locally Acting Eye Preparations" 
-                                        class=odd > Locally Acting Eye Preparations</option>
-                                        <option value="Locally Acting Nasal Preparations (For Nose)" 
-                                        class=even > Locally Acting Nasal Preparations (For Nose)</option>
-                                        <option value="Locally Acting Preparations For Mouth and Throat" 
-                                        class=odd > Locally Acting Preparations For Mouth and Throat</option>
-                                        <option value="Locally Acting Ear Preparations" 
-                                        class=even > Locally Acting Ear Preparations</option>
-                                        <option value="Specified Group" 
-                                        class=odd > Specified Group</option>
-                                        <option value="Preparations for Intravenous Infusions" 
-                                        class=even > Preparations for Intravenous Infusions</option>
-                                        <option value="Locally Acting Musculo-Skeletal Preparations" 
-                                        class=odd > Locally Acting Musculo-Skeletal Preparations</option>
-                                        <option value="Locally Acting Drugs On Colon And Rectum" 
-                                        class=even > Locally Acting Drugs On Colon And Rectum</option>
-                                        <option value="Locally Acting Intravaginal Preparations" 
-                                        class=odd > Locally Acting Intravaginal Preparations</option>
-                                        <option value="Inhalers, Puffs and Drugs for Nebulization" 
-                                        class=even > Inhalers, Puffs and Drugs for Nebulization</option>
-                                        <option value="Locally Acting Eye/Ear Preparations" 
-                                        class=odd > Locally Acting Eye/Ear Preparations</option>
-                                        <option value="Locally acting specified group" 
-                                        class=even > Locally acting specified group</option>
+                          <option value="Fruiton" 
+                                        class=even>Fruiton</option>
+                                        <option value="Indigen" 
+                                        class=odd > Indigen</option>
+                                        <option value="Herbolife" 
+                                        class=even > Herbolife</option>
+                          
 </select>
 </div>
    <div class="form-group">
