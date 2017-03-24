@@ -123,6 +123,14 @@ Route::get('/enquiry',function() {
 Route::get('/media',function() {
    return view('media');
 });
+Route::get('/category',function() {
+  return view('category');
+});
+Route::get('/category/{category}',[
+'uses'=>'SearchController@categorySearch',
+'as'=>'CategorySearch',
+  ]);
+
 /*
 Route::get('searchbrand/{term}',[
 	'uses'=>'SearchController@showBrand',

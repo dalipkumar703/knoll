@@ -53,5 +53,13 @@ class SearchController extends Controller
             ->get();
             return response()->json($brands);
  }
+ public function  categorySearch($category)
+ {
+    $products=DB::table('product')
+             ->where('category','LIKE',$category.'%')
+             ->get();
+
+    return view('categorydetail')->with('products',$products);
+ }
 
 }

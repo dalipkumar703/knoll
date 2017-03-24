@@ -22,7 +22,7 @@
     <a href="{{url('generic')}}"  class="external">By Generic</a>
     
     <a href="{{url('brand')}}"  class="external">By Brand</a>
-  	<a href=""  class="external">By Categories</a>
+  	<a href="{{url('category')}}"  class="external">By Categories</a>
   	
   </div>
   </li>

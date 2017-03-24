@@ -7,8 +7,8 @@
 <div>&nbsp;</div>
 
 <!--carousel-->
-
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+<div class="row">
+	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="2000" id="bs-carousel">
   <!-- Overlay -->
   <div class="overlay"></div>
 
@@ -22,32 +22,34 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item slides active">
-      <img src="http://localhost:8000/images/knollgallery2.jpg" alt="Chania"  height="345">
+      <img src="http://localhost:8000/images/gallery3.jpg" alt="Chania" style="height:600px;">
       <div class="slide-1"></div>
        <div class="carousel-caption">
-        <h3>Flowers</h3>
-        <p>Beatiful flowers in Kolymbari, Crete.</p>
+        <h3></h3>
+        <p></p>
       </div>
     </div>
     <div class="item slides">
       <div class="slide-2"></div>
-       <img src="http://localhost:8000/images/knollgallery2.jpg" alt="Chania"  height="345">
+       <img src="http://localhost:8000/images/gallery4.jpg" alt="Chania" style="height:600px;">
        <div class="carousel-caption">
-        <h3>Flowers</h3>
-        <p>Beatiful flowers in Kolymbari, Crete.</p>
+        <h3></h3>
+        <p></p>
       </div>
     </div>
     <div class="item slides">
       <div class="slide-3"></div>
-      <img src="http://localhost:8000/images/knollgallery3.jpg" alt="Chania"  height="345">
+      <img src="http://localhost:8000/images/gallery2.jpg" alt="Chania" style="height:600px;">
       
        <div class="carousel-caption">
-        <h3>Flowers</h3>
-        <p>Beatiful flowers in Kolymbari, Crete.</p>
+        <h3></h3>
+        <p></p>
       </div>
     </div>
   </div> 
 </div>
+</div>
+
 <!--end carousel-->
     <div>&nbsp;</div>
 	<div class="row">
