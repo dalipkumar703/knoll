@@ -46,33 +46,33 @@
     <div class="col-md-12 text-center">
       
 
-      <div class="col-md-offset-1 col-md-9" ng-if="genericSearchSuccessfull">
+      <div class="col-md-offset-1 col-md-10" ng-if="genericSearchSuccessfull">
       <div class="table-responsive">          
   <table class="table table-hover">
   
   <thead>
   <tr>
-     <td>
-    Image
-    </td>
-    <td>
-    Product Name
-    </td>
-    <td>
-    Composition
-    </td>
-    <td>
-    Package
-    </td>
-    <td>
-    Price
-    </td>
-    <td>
-    Division
-    </td>
-    <td>
-    Category
-    </td>
+     <th>
+    <center>Image</centre>
+    </th>
+    <th>
+    <center>Product </centre>
+    </th>
+    <th>
+    <center>Composition</centre>
+    </th>
+    <th>
+    <center>Package</centre>
+    </th>
+    <th>
+    <center>Price</centre>
+    </th>
+    <th>
+    <center>Division</centre>
+    </th>
+    <th>
+     <center>Category</centre>
+    </th>
   </tr>
   </thead>
   <tbody>

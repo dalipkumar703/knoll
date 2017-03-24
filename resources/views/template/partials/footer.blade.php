@@ -45,6 +45,10 @@
 							<input type="email" class="form-control" id="email" placeholder="Email">
 						</div>
 						<div class="form-group">
+							<label for="phone" class="sr-only">Contact No.</label>
+							<input type="text" class="form-control" id="email" placeholder="Contact Number">
+						</div>
+						<div class="form-group">
 							<label for="message" class="sr-only">Message</label>
 							<textarea class="form-control" id="message" rows="7" placeholder="Message"></textarea>
 						</div>

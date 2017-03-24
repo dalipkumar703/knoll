@@ -26,7 +26,7 @@
 
 <div class="col-md-3" style="padding-right:0px;">
 <div class="form-group">
-<label for="category">Category</label>
+<label for="category">Division</label>
 <select id="category" class="form-control" ng-model="category">
 	<option value="">--- Select ---</option>
                           <option value="B.Complex and Multi Vitamins Preparations" 
@@ -96,20 +96,20 @@
   <table class="table table-hover">
   <thead>
   <tr>
-     <th>Image</th>
-        <th>Product Name</th>
-        <th>Composition</th>
+     <th><center>Image</centre></th>
+        <th><center>Product</centre></th>
+        <th><center>Composition</centre></th>
         <th>
-    Package
+    <center>Package</centre>
     </th>
     <th>
-    Price
+    <center>Price</centre>
     </th>
     <th>
-    Division
+    <center>Division</centre>
     </th>
     <th>
-    Category
+    <center>Category</centre>
     </th>
   </tr>
   </thead>
@@ -138,10 +138,26 @@
     </div>
     </div>
     </div>
+<div>&nbsp;</div>
+<div class="row">
+<h2><center>Division</center></h2>
 </div>
-<div>&nbsp;</div>
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-2">
+<a href="{{route('fruiton')}}"><img src="http://localhost:8000/images/division_1.jpg"></a>
+</div>
+<div class="col-md-2">
+<a href="{{route('indigen')}}"><img src="http://localhost:8000/images/division_2.jpg"></a>
+</div>
+<div class="col-md-2">
+<a href="{{route('herbolife')}}"><img src="http://localhost:8000/images/division_5.jpg"></a>
+</div>
+<div class="col-md-3"></div>
+</div>
+</div>
 
-<div>&nbsp;</div>
+
 
 
   <script src="app/controllers/brandsearch.js"></script>

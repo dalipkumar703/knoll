@@ -16,18 +16,19 @@
 						
 						
 						<li class="{{Request::is('vision')?'active':''}}"><a href="http://localhost:8000/vision" class="external"><span>Vision</span></a></li>
-						<li class="dropdown"><a href="#" class="external" ><span>Products</span></a>
+						<li class="dropdown"><a href="#" class="external" ><span>Product Search</span></a>
 						<div class="dropdown-content">
     
-    <a href="{{url('generic')}}"  class="external">Generic Name</a>
+    <a href="{{url('generic')}}"  class="external">By Generic</a>
     
-    <a href="{{url('brand')}}"  class="external">Brand Name</a>
-  	
+    <a href="{{url('brand')}}"  class="external">By Brand</a>
+  	<a href=""  class="external">By Categories</a>
   	
   </div>
   </li>
 						
 						<li class="{{Request::is('enquiry')?'active':''}}"><a href="http://localhost:8000/enquiry" class="external"><span>Enquiry</span></a></li>
+						<li class="{{Request::is('media')?'active':''}}"><a href="http://localhost:8000/media" class="external"><span>Media</span></a></li>
 						
 						<!--<li class="call-to-action"><a href="#"><span>Sign up free</span></a></li>-->
 						

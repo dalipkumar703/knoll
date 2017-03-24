@@ -99,6 +99,18 @@ Route::group(array('prefix'=>'admin'),function()
 Route::get('/brand',function() {
    return view('brand');
 });
+Route::get('/brand/fruiton',[
+  'uses'=>'BrandController@fruiton',
+  'as'=>'fruiton',
+  ]);
+Route::get('brand/indigen',[
+  'uses'=>'BrandController@indigen',
+  'as'=>'indigen',
+  ]);
+Route::get('brand/herbolife',[
+  'uses'=>'BrandController@herbolife',
+  'as'=>'herbolife',
+  ]);
 Route::get('/about',function() {
    return view('about');
 });
@@ -107,6 +119,9 @@ Route::get('/vision',function() {
 });
 Route::get('/enquiry',function() {
    return view('enquiry');
+});
+Route::get('/media',function() {
+   return view('media');
 });
 /*
 Route::get('searchbrand/{term}',[

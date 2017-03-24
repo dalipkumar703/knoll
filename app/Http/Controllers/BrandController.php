@@ -27,6 +27,29 @@ class brandController extends Controller
             return response()->json($brands);
        
     }
+    public function fruiton()
+    {
+      $brands=DB::table('product')
+            ->where('division','=','fruiton')
+            ->get();
+            return view('division')->with('brands',$brands);
+       
+    }
+    public function indigen()
+    {
+      $brands=DB::table('product')
+            ->where('division','=','indigen')
+            ->get();
+            return view('division')->with('brands',$brands);
+    }
+    public function herbolife()
+    {
+      $brands=DB::table('product')
+            ->where('division','=','herbolife')
+            ->get();
+            return view('division')->with('brands',$brands);
+    }
+
     public function showBrandDetail($brand,$category)
     {
         
