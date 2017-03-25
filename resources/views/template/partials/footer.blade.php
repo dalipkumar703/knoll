@@ -67,21 +67,21 @@
 	-->
 	
 	<!-- jQuery -->
-	<script src="{{ URL::to('/') }}/js/jquery.min.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="{{ URL::to('/') }}/js/jquery.easing.1.3.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="{{ URL::to('/') }}/js/bootstrap.min.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="{{ URL::to('/') }}/js/jquery.waypoints.min.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
-	<script src="{{ URL::to('/') }}/js/jquery.stellar.min.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/jquery.stellar.min.js"></script>
 	<!-- Owl Carousel -->
-	<script src="{{ URL::to('/') }}/js/owl.carousel.min.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/owl.carousel.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
 	<!-- Main JS (Do not remove) -->
-	<script src="{{ URL::to('/') }}/js/main.js"></script>
+	<script src="{{ URL::to('/') }}/public/js/main.js"></script>
 
 	</body>
 </html>

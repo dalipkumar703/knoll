@@ -40,25 +40,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Voltaire" rel="stylesheet">
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="{{URL::asset('css/animate.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/animate.css')}}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{{URL::asset('css/icomoon.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/icomoon.css')}}">
 	<!-- Simple Line Icons -->
-	<link rel="stylesheet" href="{{URL::asset('css/simple-line-icons.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/simple-line-icons.css')}}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{{URL::asset('css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/bootstrap.css')}}">
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{{URL::asset('css/owl.carousel.min.css')}}">
-	<link rel="stylesheet" href="{{URL::asset('css/owl.theme.default.min.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{URL::asset('public/css/owl.theme.default.min.css')}}">
 	<!-- Style -->
-	<link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/public/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.js"></script>
        
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 		
 
-       <script src="{{ URL::to('/') }}/app/app.js"></script>
+       <script src="{{ URL::to('/') }}/public/app/app.js"></script>
  
 
 

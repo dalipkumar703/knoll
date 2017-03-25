@@ -77,7 +77,7 @@
   </thead>
   <tbody>
   <tr ng-repeat="x in genericData">
-    <td><img src="http://localhost:8000/<% x.image %>" height="120" width="180"></td>
+    <td><img src="public/<% x.image %>" height="120" width="180"></td>
     <td>
     <% x.productname %>
     </td>
@@ -113,7 +113,7 @@
   
         <!-- AngularJS Application Scripts -->
        
-        <script src="app/controllers/genericsearch.js"></script>
+        <script src="public/app/controllers/genericsearch.js"></script>
 
  </section>
   @stop

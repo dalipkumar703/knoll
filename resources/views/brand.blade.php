@@ -90,7 +90,7 @@
   
   <tr ng-repeat="brand in brandData">
 
-     <td><img src="http://localhost:8000/<% brand.image %>" height="120" width="180"></td>
+     <td><img src="public/<% brand.image %>" height="120" width="180"></td>
     <td>
     <% brand.productname %>
     </td>
@@ -118,13 +118,13 @@
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-2">
-<a href="{{route('fruiton')}}"><img src="http://localhost:8000/images/division_1.jpg"></a>
+<a href="{{route('fruiton')}}"><img src="{{url('public/images/division_1.jpg')}}"></a>
 </div>
 <div class="col-md-2">
-<a href="{{route('indigen')}}"><img src="http://localhost:8000/images/division_2.jpg"></a>
+<a href="{{route('indigen')}}"><img src="{{url('public/images/division_2.jpg')}}"></a>
 </div>
 <div class="col-md-2">
-<a href="{{route('herbolife')}}"><img src="http://localhost:8000/images/division_5.jpg"></a>
+<a href="{{route('herbolife')}}"><img src="{{url('public/images/division_5.jpg')}}"></a>
 </div>
 <div class="col-md-3"></div>
 </div>
@@ -133,7 +133,7 @@
 
 
 
-  <script src="app/controllers/brandsearch.js"></script>
+  <script src="public/app/controllers/brandsearch.js"></script>
   
 </section>
 @stop

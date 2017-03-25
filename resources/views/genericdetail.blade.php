@@ -35,7 +35,7 @@
     <tbody>
       <tr>
         
-        <td><img src="http://localhost:8000/{{$generic->image}}" height="120" width="180"></td>
+        <td><img src="{{$generic->image}}" height="120" width="180"></td>
         <td>{{$generic->productname}}</td>
         <td>{{$generic->composition}}</td>
         <td>{{$generic->packing}}</td>

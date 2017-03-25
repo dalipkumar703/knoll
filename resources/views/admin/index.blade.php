@@ -521,6 +521,6 @@
 
 
 </div>
-<script src="{{url('app/controllers/genericsearch.js')}}"></script>
-<script src="{{url('app/controllers/brandsearch.js')}}"></script>
+<script src="{{url('public/app/controllers/genericsearch.js')}}"></script>
+<script src="{{url('public/app/controllers/brandsearch.js')}}"></script>
 @stop

@@ -22,7 +22,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item slides active">
-      <img src="http://localhost:8000/images/gallery3.jpg" alt="Chania" style="height:700px;">
+      <img src="{{url('public/images/gallery3.jpg')}}" alt="Chania" style="height:700px;">
       <div class="slide-1"></div>
        <div class="carousel-caption">
         <h3></h3>
@@ -31,7 +31,7 @@
     </div>
     <div class="item slides">
       <div class="slide-2"></div>
-       <img src="http://localhost:8000/images/gallery4.jpg" alt="Chania" style="height:700px;">
+       <img src="url('public/images/gallery4.jpg')" alt="Chania" style="height:700px;">
        <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -39,7 +39,7 @@
     </div>
     <div class="item slides">
       <div class="slide-3"></div>
-      <img src="http://localhost:8000/images/gallery2.jpg" alt="Chania" style="height:700px;">
+      <img src="{{url('public/images/gallery2.jpg')}}" alt="Chania" style="height:700px;">
       
        <div class="carousel-caption">
         <h3></h3>

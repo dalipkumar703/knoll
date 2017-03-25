@@ -42,8 +42,8 @@
         </div>
     </div>
 </div>
-<link  rel="stylesheet" href="{{URL::asset('css/carddesign.css')}}" type="text/css">
+<link  rel="stylesheet" href="{{URL::asset('public/css/carddesign.css')}}" type="text/css">
 
-  <script src="{{url('app/controllers/admincontroller.js')}}"></script>
+  <script src="{{url('public/app/controllers/admincontroller.js')}}"></script>
 
 @stop

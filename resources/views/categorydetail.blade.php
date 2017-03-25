@@ -40,12 +40,12 @@
   </thead>
   <tbody>
   @foreach($products as $product)<tr>
-    <td><img src="http://localhost:8000/{{$product->image}}" height="120" width="180"></td>
+    <td><img src="{{url($product->image)}}" height="120" width="180"></td>
     <td>
     {{$product->productname}}  
     </td>
     <td> 
-     <a href="generic-detail/{{$product->id}}" >{{$product->composition}}</a>
+     <a href="{{url('generic-detail/'.$product->id)}}" >{{$product->composition}}</a>
     </td>
     <td>{{$product->packing}}</td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span>{{$product->mrp}} </td>
