@@ -58,7 +58,7 @@ class SearchController extends Controller
     $products=DB::table('product')
              ->where('category','LIKE',$category.'%')
              ->orderBy("productname")
-             ->get();
+             ->paginate(20);
 
     return view('categorydetail')->with('products',$products);
  }

@@ -57,8 +57,11 @@
     </td>
     </tr>
     @endforeach
+
     </tbody>
+
     </table>
+    {!! $products->render() !!}
     </div>
     </div>
     <div class="col-md-1">

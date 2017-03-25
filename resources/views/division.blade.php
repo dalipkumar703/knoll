@@ -59,6 +59,7 @@
     @endforeach
     </tbody>
     </table>
+    {!! $brands->render() !!}
     </div>
     </div>
     <div class="col-md-1">

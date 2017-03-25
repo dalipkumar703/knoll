@@ -31,7 +31,7 @@ class brandController extends Controller
     {
       $brands=DB::table('product')
             ->where('division','=','fruiton')
-            ->get();
+            ->paginate(20);
             return view('division')->with('brands',$brands);
        
     }
@@ -39,14 +39,14 @@ class brandController extends Controller
     {
       $brands=DB::table('product')
             ->where('division','=','indigen')
-            ->get();
+            ->paginate(20);
             return view('division')->with('brands',$brands);
     }
     public function herbolife()
     {
       $brands=DB::table('product')
             ->where('division','=','herbolife')
-            ->get();
+            ->paginate(20);
             return view('division')->with('brands',$brands);
     }
 

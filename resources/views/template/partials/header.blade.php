@@ -5,7 +5,7 @@
 				<div class="navbar-header">
 					<!-- Mobile Toggle Menu Button -->
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-					<a class="navbar-brand" href="{{url('/')}}"><img src="{{url('images/knoll2.jpg')}}" height="40" width="100"></a> 
+					<a class="navbar-brand" href="{{url('/')}}"><img src="{{url('images/knoll2.jpg')}}" height="38" width="100"></a> 
 				</div>
 				@if(!Request::is('admin')&&(!Request::is('admin/index'))&&!Request::is('admin/generic/update/*')&&!Request::is('admin/brand/update/*'))
 				<div id="navbar" class="navbar-collapse collapse">
