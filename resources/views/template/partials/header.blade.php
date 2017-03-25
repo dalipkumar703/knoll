@@ -27,7 +27,7 @@
   </div>
   </li>
 						
-						<li class="{{Request::is('enquiry')?'active':''}}"><a href="http://localhost:8000/enquiry" class="external"><span>Enquiry</span></a></li>
+						<li class="{{Request::is('faq')?'active':''}}"><a href="http://localhost:8000/faq" class="external"><span>Faq</span></a></li>
 						<li class="{{Request::is('media')?'active':''}}"><a href="http://localhost:8000/media" class="external"><span>Media</span></a></li>
 						<li class=""><a href="#" class="external"><span> +91-99 71 044333 </span></a></li>
 						<!--<li class="call-to-action"><a href="#"><span>Sign up free</span></a></li>-->

@@ -4,11 +4,11 @@
 
 
 
-<div>&nbsp;</div>
+
 
 <!--carousel-->
 <div class="row">
-	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="2000" id="bs-carousel">
+	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="3000" id="bs-carousel">
   <!-- Overlay -->
   <div class="overlay"></div>
 
@@ -22,7 +22,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item slides active">
-      <img src="http://localhost:8000/images/gallery3.jpg" alt="Chania" style="height:600px;">
+      <img src="http://localhost:8000/images/gallery3.jpg" alt="Chania" style="height:700px;">
       <div class="slide-1"></div>
        <div class="carousel-caption">
         <h3></h3>
@@ -31,7 +31,7 @@
     </div>
     <div class="item slides">
       <div class="slide-2"></div>
-       <img src="http://localhost:8000/images/gallery4.jpg" alt="Chania" style="height:600px;">
+       <img src="http://localhost:8000/images/gallery4.jpg" alt="Chania" style="height:700px;">
        <div class="carousel-caption">
         <h3></h3>
         <p></p>
@@ -39,7 +39,7 @@
     </div>
     <div class="item slides">
       <div class="slide-3"></div>
-      <img src="http://localhost:8000/images/gallery2.jpg" alt="Chania" style="height:600px;">
+      <img src="http://localhost:8000/images/gallery2.jpg" alt="Chania" style="height:700px;">
       
        <div class="carousel-caption">
         <h3></h3>
@@ -132,39 +132,11 @@
 	</div>
 -->	
 	<div>&nbsp;</div>
-	<div class="row">
-					<div class="col-md-3">
-					
-					<img src="images/product1.jpeg" alt="product" class="img-responsive" title="Product1">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product2.jpeg" alt="product" class="img-responsive" title="Product2">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product3.jpeg" alt="product" class="img-responsive" title="Product3">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product4.jpeg" alt="product" class="img-responsive" title="Product4">
-					</div>
-				</div>
+	
 				<div style="line-height:300%;">
 				<br />
 				</div>
-				<div class="row" style="margin-bottom:4em;">
-					<div class="col-md-3">
-					
-					<img src="images/product5.jpeg" alt="product" class="img-responsive" title="Product5">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product6.jpeg" alt="product" class="img-responsive" title="Product6">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product7.jpeg" alt="product" class="img-responsive" title="Product7">
-					</div>
-					<div class="col-md-3">
-					<img src="images/product8.jpeg" alt="product" class="img-responsive" title="Product8">
-					</div>
-</div>
+				
 
 	<link rel="stylesheet" href="http://localhost:8000/css/carousel.css">	
 

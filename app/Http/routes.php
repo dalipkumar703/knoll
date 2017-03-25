@@ -117,7 +117,7 @@ Route::get('/about',function() {
 Route::get('/vision',function() {
    return view('vision');
 });
-Route::get('/enquiry',function() {
+Route::get('/faq',function() {
    return view('enquiry');
 });
 Route::get('/media',function() {

@@ -45,7 +45,7 @@
     {{$brand->productname}}  
     </td>
     <td> 
-     <a href="generic-detail/{{$brand->id}}" >{{$brand->composition}}</a>
+     {{$brand->composition}}
     </td>
     <td>{{$brand->packing}}</td>
     <td><span style='font-family: "Times New Roman", Georgia, Serif;'>&#x20B9;</span>{{$brand->mrp}} </td>

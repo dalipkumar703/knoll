@@ -34,7 +34,7 @@
                 <div class="card-action">
                     <div class="form-group">
                      <center><input type="submit"  value="Submit" class="btn btn-default"></center>
-                     <span class="danger" ng-if="!flag&&initialize">User or password is incorrect</span>
+                     <span class="danger" style="color:red;" ng-if="!flag&&initialize">User or password is incorrect</span>
                     </div>                   
                 </div>
                 </form>
