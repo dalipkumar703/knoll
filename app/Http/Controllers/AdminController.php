@@ -274,7 +274,13 @@ public function postUpload(Request $request)
      elseif(Input::hasFile('file1')){
       $file1=Input::file('file1');
        $file1->move(public_path(),$file1->getClientOriginalName());
-       exec('unzip '.$file1->getClientOriginalName());
+      $zip = new ZipArchive;
+$zip->open(public_path().'/'.$file1->getClientOriginalName());
+    $zip->extractTo(public_path());
+    $zip->close();
+   
+
+      // exec('unzip '.$file1->getClientOriginalName());
         Session::flash('csv_generic_uploaded','Uploaded Successfully!');
          return redirect()->back();
      }
