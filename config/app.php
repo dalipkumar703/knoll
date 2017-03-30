@@ -139,6 +139,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Chumper\Zipper\ZipperServiceProvider',
+        Barryvdh\Snappy\ServiceProvider::class,
 
 
         /*
@@ -201,7 +202,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
         'Zipper' => 'Chumper\Zipper\Zipper',
-
+         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,    
     ],
 
 ];

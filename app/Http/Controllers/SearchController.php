@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Generic;
 use DB;
+use PDF; 
 
 class SearchController extends Controller
 {
@@ -62,5 +63,22 @@ class SearchController extends Controller
 
     return view('categorydetail')->with('products',$products);
  }
-
+ public function downloadCategory($category) {
+  $products=DB::table('product')
+             ->where('category','LIKE',$category.'%')
+             ->orderBy("productname")
+             ->get();
+             
+$pdf = PDF::loadView('pdf.categorydetail',['products'=>$products]);
+return $pdf->inline(); 
+ }
+public function downloadDivision($division) {
+    $products=DB::table('product')
+             ->where('division','LIKE',$division.'%')
+             ->orderBy("productname")
+             ->get();
+             
+$pdf = PDF::loadView('pdf.categorydetail',['products'=>$products]);
+return $pdf->inline();  
+}
 }

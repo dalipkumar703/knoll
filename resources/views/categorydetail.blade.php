@@ -4,7 +4,12 @@
 @section('content')
 <div>&nbsp;</div>
 <div class="row">
-<h2><center>{{Request::is('category/tablet')?'Tablet':''}}{{Request::is('category/drop')?'Drop':''}}{{Request::is('category/liquid')?'Liquid':''}}{{Request::is('category/oinment')?'Oinment':''}}</center></h2>
+<h2><center>{{Request::is('category/TABLET')?'Tablet':''}}{{Request::is('category/DROP')?'Drop':''}}{{Request::is('category/LIQUID')?'Liquid':''}}{{Request::is('category/OINMENT')?'Oinment':''}}</center></h2>
+</div>
+<div class="row">
+<div class="col-md-offset-10 col-md-2">
+  <a href="http://localhost:8000/category/download/{{Request::is('category/TABLET')?'Tablet':''}}{{Request::is('category/DROP')?'Drop':''}}{{Request::is('category/LIQUID')?'Liquid':''}}{{Request::is('category/OINMENT')?'Oinment':''}}"><span class="glyphicon glyphicon-download"></span>&nbsp;Download</a>
+</div>
 </div>
 
 <div class="row">

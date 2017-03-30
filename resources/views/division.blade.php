@@ -1,4 +1,3 @@
-
 @extends('template.default')
 
 @section('content')
@@ -6,7 +5,11 @@
 <div class="row">
 <h2><center>{{Request::is('brand/fruiton')?'Fruiton':''}}{{Request::is('brand/indigen')?'Indigen':''}}{{Request::is('brand/herbolife')?'Herbolife':''}}</center></h2>
 </div>
-
+<div class="row">
+<div class="col-md-offset-10 col-md-2">
+  <a href="http://localhost:8000/brand/download/{{Request::is('brand/fruiton')?'Fruiton':''}}{{Request::is('brand/indigen')?'Indigen':''}}{{Request::is('brand/herbolife')?'Herbolife':''}}"><span class="glyphicon glyphicon-download"></span>&nbsp;Download</a>
+</div>
+</div>
 <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">

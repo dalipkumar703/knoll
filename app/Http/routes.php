@@ -130,6 +130,14 @@ Route::get('/category/{category}',[
 'uses'=>'SearchController@categorySearch',
 'as'=>'CategorySearch',
   ]);
+Route::get('/category/download/{category}',[
+'uses'=>'SearchController@downloadcategory',
+'as'=>'CategoryDownload',
+  ]);
+Route::get('brand/download/{division}',[
+'uses'=>'SearchController@downloadDivision',
+'as'=>'divisionDownload',
+  ]);
 
 /*
 Route::get('searchbrand/{term}',[
